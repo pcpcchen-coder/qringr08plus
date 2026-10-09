@@ -43,11 +43,12 @@ def basis(neutral):
     return g,right,up
 
 def profile_axes(profile):
-    if profile.get('version')!=1:
+    if profile.get('version') not in (1,2):
         raise ValueError('不支援的校正版本')
     poses=profile.get('poses')
-    if not isinstance(poses,list) or len(poses)!=3:
-        raise ValueError('需要中立、向右、向上三個姿勢')
+    expected=5 if profile.get('version')==2 else 3
+    if not isinstance(poses,list) or len(poses)!=expected:
+        raise ValueError('需要中立與版本指定的所有方向姿勢')
     for pose in poses:
         if not isinstance(pose,list) or len(pose)!=3 or any(not isinstance(x,(int,float)) or not math.isfinite(x) for x in pose):
             raise ValueError('姿勢資料無效')
@@ -61,7 +62,14 @@ def profile_axes(profile):
         if d>math.cos(math.radians(8)) or d<.5:
             raise ValueError('請使用約 10–60 度的傾斜姿勢')
         tangents.append(unit(tuple((x-d*n[i])*8192 for i,x in enumerate(g))))
-    r,u=tangents
+    if expected==5:
+        rr,ll,uu,dd=tangents
+        if dot(rr,ll)>-.2 or dot(uu,dd)>-.2:
+            raise ValueError('右／左或上／下姿勢不是相反方向')
+        r=unit(tuple((rr[i]-ll[i])*8192 for i in range(3)))
+        u=unit(tuple((uu[i]-dd[i])*8192 for i in range(3)))
+    else:
+        r,u=tangents
     c=dot(r,u)
     den=1-c*c
     if den<.2:
