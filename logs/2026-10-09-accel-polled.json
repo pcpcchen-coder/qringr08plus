@@ -1,0 +1,5677 @@
+[
+  {
+    "time": "2026-10-09T18:05:26.634134+08:00",
+    "monotonic": 0.320055875,
+    "kind": "hardware",
+    "value": "RT08_V3.1"
+  },
+  {
+    "time": "2026-10-09T18:05:26.814758+08:00",
+    "monotonic": 0.500710625,
+    "kind": "firmware",
+    "value": "RT08_3.10.48_260309"
+  },
+  {
+    "time": "2026-10-09T18:05:26.874159+08:00",
+    "monotonic": 0.560120625,
+    "kind": "notify",
+    "hex": "a1 01 00 bc 00 00 00 00 00 00 00 00 00 00 00 5e",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:26.904077+08:00",
+    "monotonic": 0.590034083,
+    "kind": "notify",
+    "hex": "a1 02 26 ce 00 00 00 00 00 00 00 00 00 00 00 97",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:26.904417+08:00",
+    "monotonic": 0.590348625,
+    "kind": "notify",
+    "hex": "a1 03 e5 18 0d 40 f4 cc 00 00 00 00 00 00 00 ae",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:26.904497+08:00",
+    "monotonic": 0.590415541,
+    "kind": "accel",
+    "raw": [
+      -6888,
+      3392,
+      -2868
+    ],
+    "nominal_g": [
+      -0.8408,
+      0.4141,
+      -0.3501
+    ],
+    "norm_raw": 8196.07,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:26.906214+08:00",
+    "monotonic": 0.592147083,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 01 00 00 0f ff 00 00 00 00 00 b4",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:26.906610+08:00",
+    "monotonic": 0.592564166,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.316202+08:00",
+    "monotonic": 1.002167291,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:27.414109+08:00",
+    "monotonic": 1.100051333,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 00 00 00 00 00 00 00 00 00 00 5d",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.414295+08:00",
+    "monotonic": 1.100207416,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.415654+08:00",
+    "monotonic": 1.101569375,
+    "kind": "notify",
+    "hex": "a1 03 13 08 d4 34 1b d4 00 00 00 00 00 00 00 b6",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.415699+08:00",
+    "monotonic": 1.101614208,
+    "kind": "accel",
+    "raw": [
+      4872,
+      -11212,
+      7124
+    ],
+    "nominal_g": [
+      0.5947,
+      -1.3687,
+      0.8696
+    ],
+    "norm_raw": 14149.09,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.415995+08:00",
+    "monotonic": 1.101915916,
+    "kind": "notify",
+    "hex": "a1 04 00 05 00 02 00 0a 0f ff 00 00 00 00 00 c4",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.416313+08:00",
+    "monotonic": 1.102226666,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.594046+08:00",
+    "monotonic": 1.279999208,
+    "kind": "notify",
+    "hex": "73 12 00 00 1a 00 04 2a 00 00 10 00 00 00 00 dd",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.864049+08:00",
+    "monotonic": 1.549997583,
+    "kind": "notify",
+    "hex": "a1 01 00 ba 00 00 00 00 00 00 00 00 00 00 00 5c",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.864277+08:00",
+    "monotonic": 1.550197041,
+    "kind": "notify",
+    "hex": "a1 02 26 cb 00 00 00 00 00 00 00 00 00 00 00 94",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.865695+08:00",
+    "monotonic": 1.551622125,
+    "kind": "notify",
+    "hex": "a1 03 0a b8 e7 24 0f 68 00 00 00 00 00 00 00 e8",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.865758+08:00",
+    "monotonic": 1.551672791,
+    "kind": "accel",
+    "raw": [
+      2744,
+      -6364,
+      3944
+    ],
+    "nominal_g": [
+      0.335,
+      -0.7769,
+      0.4814
+    ],
+    "norm_raw": 7974.03,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.866069+08:00",
+    "monotonic": 1.551989208,
+    "kind": "notify",
+    "hex": "a1 04 00 02 00 03 00 07 0f ff 00 00 00 00 00 bf",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:27.866416+08:00",
+    "monotonic": 1.552337166,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:28.884242+08:00",
+    "monotonic": 2.570199583,
+    "kind": "notify",
+    "hex": "a1 01 00 ba 00 00 00 00 00 00 00 00 00 00 00 5c",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:28.884649+08:00",
+    "monotonic": 2.570581916,
+    "kind": "notify",
+    "hex": "a1 02 26 cb 00 00 00 00 00 00 00 00 00 00 00 94",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:28.885873+08:00",
+    "monotonic": 2.571802833,
+    "kind": "notify",
+    "hex": "a1 03 03 d4 01 0c df 94 00 00 00 00 00 00 00 fb",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:28.885976+08:00",
+    "monotonic": 2.571907166,
+    "kind": "accel",
+    "raw": [
+      980,
+      268,
+      -8300
+    ],
+    "nominal_g": [
+      0.1196,
+      0.0327,
+      -1.0132
+    ],
+    "norm_raw": 8361.95,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:28.886379+08:00",
+    "monotonic": 2.572300458,
+    "kind": "notify",
+    "hex": "a1 04 00 07 00 04 00 05 0f ff 00 00 00 00 00 c3",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:28.886567+08:00",
+    "monotonic": 2.572485333,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:29.214047+08:00",
+    "monotonic": 2.900005583,
+    "kind": "notify",
+    "hex": "73 12 00 00 1c 00 04 7c 00 00 11 00 00 00 00 32",
+    "valid": true,
+    "phase": "snapshot"
+  },
+  {
+    "time": "2026-10-09T18:05:29.317976+08:00",
+    "monotonic": 3.00396775,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:29.318687+08:00",
+    "monotonic": 3.004615791,
+    "kind": "ready",
+    "seconds": 8,
+    "mode": 3
+  },
+  {
+    "time": "2026-10-09T18:05:29.394136+08:00",
+    "monotonic": 3.080084541,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.394305+08:00",
+    "monotonic": 3.08021475,
+    "kind": "notify",
+    "hex": "a1 02 26 cb 00 00 00 00 00 00 00 00 00 00 00 94",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.395579+08:00",
+    "monotonic": 3.081489416,
+    "kind": "notify",
+    "hex": "a1 03 04 7c fe dc dc dc 00 00 00 00 00 00 00 b6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.395612+08:00",
+    "monotonic": 3.081519791,
+    "kind": "accel",
+    "raw": [
+      1148,
+      -292,
+      -8996
+    ],
+    "nominal_g": [
+      0.1401,
+      -0.0356,
+      -1.0981
+    ],
+    "norm_raw": 9073.65,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.395847+08:00",
+    "monotonic": 3.081756791,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.396282+08:00",
+    "monotonic": 3.082194916,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.419930+08:00",
+    "monotonic": 3.105859583,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:29.521497+08:00",
+    "monotonic": 3.20748625,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:29.603987+08:00",
+    "monotonic": 3.289928291,
+    "kind": "notify",
+    "hex": "a1 01 00 ba 00 00 00 00 00 00 00 00 00 00 00 5c",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.604228+08:00",
+    "monotonic": 3.290146708,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.605890+08:00",
+    "monotonic": 3.2918085,
+    "kind": "notify",
+    "hex": "a1 03 05 e8 02 6c dd b0 00 00 00 00 00 00 00 8c",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.605941+08:00",
+    "monotonic": 3.291853,
+    "kind": "accel",
+    "raw": [
+      1512,
+      620,
+      -8784
+    ],
+    "nominal_g": [
+      0.1846,
+      0.0757,
+      -1.0723
+    ],
+    "norm_raw": 8934.72,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.606174+08:00",
+    "monotonic": 3.292090833,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.606522+08:00",
+    "monotonic": 3.292436041,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.607009+08:00",
+    "monotonic": 3.292938708,
+    "kind": "notify",
+    "hex": "a1 01 00 ba 00 00 00 00 00 00 00 00 00 00 00 5c",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.623431+08:00",
+    "monotonic": 3.309383375,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:29.633566+08:00",
+    "monotonic": 3.319503875,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.634425+08:00",
+    "monotonic": 3.320347708,
+    "kind": "notify",
+    "hex": "a1 03 05 e8 02 6c dd b0 00 00 00 00 00 00 00 8c",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.634485+08:00",
+    "monotonic": 3.320400083,
+    "kind": "accel",
+    "raw": [
+      1512,
+      620,
+      -8784
+    ],
+    "nominal_g": [
+      0.1846,
+      0.0757,
+      -1.0723
+    ],
+    "norm_raw": 8934.72,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.634960+08:00",
+    "monotonic": 3.320883708,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.662482+08:00",
+    "monotonic": 3.348424625,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.694196+08:00",
+    "monotonic": 3.38015,
+    "kind": "notify",
+    "hex": "a1 01 00 ba 00 00 00 00 00 00 00 00 00 00 00 5c",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.694497+08:00",
+    "monotonic": 3.380418833,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.695623+08:00",
+    "monotonic": 3.381542041,
+    "kind": "notify",
+    "hex": "a1 03 08 88 02 d0 d8 dc 00 00 00 00 00 00 00 ba",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.695932+08:00",
+    "monotonic": 3.381849,
+    "kind": "accel",
+    "raw": [
+      2184,
+      720,
+      -10020
+    ],
+    "nominal_g": [
+      0.2666,
+      0.0879,
+      -1.2231
+    ],
+    "norm_raw": 10280.5,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.696305+08:00",
+    "monotonic": 3.382226833,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.696500+08:00",
+    "monotonic": 3.382423541,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.725211+08:00",
+    "monotonic": 3.4111615,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:29.826953+08:00",
+    "monotonic": 3.512901083,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:29.873825+08:00",
+    "monotonic": 3.559778208,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 00 00 00 00 00 00 00 00 00 00 5b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.875088+08:00",
+    "monotonic": 3.561022875,
+    "kind": "notify",
+    "hex": "a1 02 26 cc 00 00 00 00 00 00 00 00 00 00 00 95",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.875422+08:00",
+    "monotonic": 3.561348958,
+    "kind": "notify",
+    "hex": "a1 03 0b 2c 02 c0 fe 18 00 00 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.875490+08:00",
+    "monotonic": 3.561405875,
+    "kind": "accel",
+    "raw": [
+      2860,
+      704,
+      -488
+    ],
+    "nominal_g": [
+      0.3491,
+      0.0859,
+      -0.0596
+    ],
+    "norm_raw": 2985.53,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.876090+08:00",
+    "monotonic": 3.56201025,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.876597+08:00",
+    "monotonic": 3.562513,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.904017+08:00",
+    "monotonic": 3.589966125,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 00 00 00 00 00 00 00 00 00 00 5b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.904316+08:00",
+    "monotonic": 3.590237,
+    "kind": "notify",
+    "hex": "a1 02 26 cc 00 00 00 00 00 00 00 00 00 00 00 95",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.906034+08:00",
+    "monotonic": 3.591963625,
+    "kind": "notify",
+    "hex": "a1 03 16 78 01 e4 1c 94 00 00 00 00 00 00 00 c7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.906104+08:00",
+    "monotonic": 3.592021,
+    "kind": "accel",
+    "raw": [
+      5752,
+      484,
+      7316
+    ],
+    "nominal_g": [
+      0.7021,
+      0.0591,
+      0.8931
+    ],
+    "norm_raw": 9318.99,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.906445+08:00",
+    "monotonic": 3.592364708,
+    "kind": "notify",
+    "hex": "a1 04 00 01 00 00 00 00 0f ff 00 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.906929+08:00",
+    "monotonic": 3.592848166,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.907261+08:00",
+    "monotonic": 3.593179416,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 00 00 00 00 00 00 00 00 00 00 5b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.907832+08:00",
+    "monotonic": 3.593746291,
+    "kind": "notify",
+    "hex": "a1 02 26 cc 00 00 00 00 00 00 00 00 00 00 00 95",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.928564+08:00",
+    "monotonic": 3.614503583,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:29.933931+08:00",
+    "monotonic": 3.619864666,
+    "kind": "notify",
+    "hex": "a1 03 17 64 f5 ac 33 a0 00 00 00 00 00 00 00 93",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.934001+08:00",
+    "monotonic": 3.619916916,
+    "kind": "accel",
+    "raw": [
+      5988,
+      -2644,
+      13216
+    ],
+    "nominal_g": [
+      0.731,
+      -0.3228,
+      1.6133
+    ],
+    "norm_raw": 14748.2,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.934303+08:00",
+    "monotonic": 3.62022475,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.936320+08:00",
+    "monotonic": 3.62224375,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.964067+08:00",
+    "monotonic": 3.650011666,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 00 00 00 00 00 00 00 00 00 00 5b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.964359+08:00",
+    "monotonic": 3.650295666,
+    "kind": "notify",
+    "hex": "a1 02 26 cc 00 00 00 00 00 00 00 00 00 00 00 95",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.965705+08:00",
+    "monotonic": 3.651626333,
+    "kind": "notify",
+    "hex": "a1 03 12 64 e8 38 2c 28 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.965772+08:00",
+    "monotonic": 3.651687833,
+    "kind": "accel",
+    "raw": [
+      4708,
+      -6088,
+      11304
+    ],
+    "nominal_g": [
+      0.5747,
+      -0.7432,
+      1.3799
+    ],
+    "norm_raw": 13675.14,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.966075+08:00",
+    "monotonic": 3.652008541,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:29.966425+08:00",
+    "monotonic": 3.6523425,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.030244+08:00",
+    "monotonic": 3.716204875,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.131623+08:00",
+    "monotonic": 3.817586041,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.174235+08:00",
+    "monotonic": 3.86019325,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 00 00 00 00 00 00 00 00 00 00 5b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.174597+08:00",
+    "monotonic": 3.860523125,
+    "kind": "notify",
+    "hex": "a1 02 26 c4 00 00 00 00 00 00 00 00 00 00 00 8d",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.176222+08:00",
+    "monotonic": 3.862153958,
+    "kind": "notify",
+    "hex": "a1 03 0c b0 e9 ec 11 38 00 00 00 00 00 00 00 7e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.176294+08:00",
+    "monotonic": 3.862210125,
+    "kind": "accel",
+    "raw": [
+      3248,
+      -5652,
+      4408
+    ],
+    "nominal_g": [
+      0.3965,
+      -0.6899,
+      0.5381
+    ],
+    "norm_raw": 7869.25,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.176561+08:00",
+    "monotonic": 3.86247425,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.176879+08:00",
+    "monotonic": 3.862801791,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.177209+08:00",
+    "monotonic": 3.863123166,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 00 00 00 00 00 00 00 00 00 00 5b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.204258+08:00",
+    "monotonic": 3.890214083,
+    "kind": "notify",
+    "hex": "a1 02 26 c4 00 00 00 00 00 00 00 00 00 00 00 8d",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.204577+08:00",
+    "monotonic": 3.890500375,
+    "kind": "notify",
+    "hex": "a1 03 0c b0 e9 ec 11 38 00 00 00 00 00 00 00 7e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.204642+08:00",
+    "monotonic": 3.890558875,
+    "kind": "accel",
+    "raw": [
+      3248,
+      -5652,
+      4408
+    ],
+    "nominal_g": [
+      0.3965,
+      -0.6899,
+      0.5381
+    ],
+    "norm_raw": 7869.25,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.205713+08:00",
+    "monotonic": 3.891635666,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.206099+08:00",
+    "monotonic": 3.892017625,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.206356+08:00",
+    "monotonic": 3.892271083,
+    "kind": "notify",
+    "hex": "73 12 00 00 1e 00 04 ce 00 00 12 00 00 00 00 87",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.233453+08:00",
+    "monotonic": 3.919403458,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.335217+08:00",
+    "monotonic": 4.021168875,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.414087+08:00",
+    "monotonic": 4.100031,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.414257+08:00",
+    "monotonic": 4.100167,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.415760+08:00",
+    "monotonic": 4.101677041,
+    "kind": "notify",
+    "hex": "a1 03 09 4c e7 90 11 ec 00 00 00 00 00 00 00 6d",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.415801+08:00",
+    "monotonic": 4.101709291,
+    "kind": "accel",
+    "raw": [
+      2380,
+      -6256,
+      4588
+    ],
+    "nominal_g": [
+      0.2905,
+      -0.7637,
+      0.5601
+    ],
+    "norm_raw": 8114.9,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.416085+08:00",
+    "monotonic": 4.10199575,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 01 00 00 0f ff 00 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.416729+08:00",
+    "monotonic": 4.102645333,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.417047+08:00",
+    "monotonic": 4.1029605,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.417646+08:00",
+    "monotonic": 4.103572208,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.418124+08:00",
+    "monotonic": 4.104041875,
+    "kind": "notify",
+    "hex": "a1 03 09 4c e7 90 11 ec 00 00 00 00 00 00 00 6d",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.418171+08:00",
+    "monotonic": 4.104080791,
+    "kind": "accel",
+    "raw": [
+      2380,
+      -6256,
+      4588
+    ],
+    "nominal_g": [
+      0.2905,
+      -0.7637,
+      0.5601
+    ],
+    "norm_raw": 8114.9,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.436846+08:00",
+    "monotonic": 4.122777166,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.473547+08:00",
+    "monotonic": 4.15949025,
+    "kind": "notify",
+    "hex": "a1 04 00 03 00 01 00 05 0f ff 00 00 00 00 00 bc",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.474273+08:00",
+    "monotonic": 4.160190541,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.474561+08:00",
+    "monotonic": 4.16046975,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.476116+08:00",
+    "monotonic": 4.16202675,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.476666+08:00",
+    "monotonic": 4.162575958,
+    "kind": "notify",
+    "hex": "a1 03 08 84 e7 f4 11 d0 00 00 00 00 00 00 00 ec",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.476699+08:00",
+    "monotonic": 4.162606291,
+    "kind": "accel",
+    "raw": [
+      2180,
+      -6156,
+      4560
+    ],
+    "nominal_g": [
+      0.2661,
+      -0.7515,
+      0.5566
+    ],
+    "norm_raw": 7965.07,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.477162+08:00",
+    "monotonic": 4.163071583,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.477493+08:00",
+    "monotonic": 4.163402083,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.538417+08:00",
+    "monotonic": 4.224350791,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.639991+08:00",
+    "monotonic": 4.325952166,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.684211+08:00",
+    "monotonic": 4.370170041,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.684520+08:00",
+    "monotonic": 4.370442375,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.685897+08:00",
+    "monotonic": 4.371825625,
+    "kind": "notify",
+    "hex": "a1 03 05 08 e4 94 13 48 00 00 00 00 00 00 00 84",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.685965+08:00",
+    "monotonic": 4.371878416,
+    "kind": "accel",
+    "raw": [
+      1288,
+      -7020,
+      4936
+    ],
+    "nominal_g": [
+      0.1572,
+      -0.8569,
+      0.6025
+    ],
+    "norm_raw": 8677.76,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.686277+08:00",
+    "monotonic": 4.372209125,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.687005+08:00",
+    "monotonic": 4.372925458,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.687370+08:00",
+    "monotonic": 4.373293791,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.688119+08:00",
+    "monotonic": 4.374039416,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.688365+08:00",
+    "monotonic": 4.374279791,
+    "kind": "notify",
+    "hex": "a1 03 05 08 e4 94 13 48 00 00 00 00 00 00 00 84",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.688402+08:00",
+    "monotonic": 4.374314541,
+    "kind": "accel",
+    "raw": [
+      1288,
+      -7020,
+      4936
+    ],
+    "nominal_g": [
+      0.1572,
+      -0.8569,
+      0.6025
+    ],
+    "norm_raw": 8677.76,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.713764+08:00",
+    "monotonic": 4.399699708,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.713999+08:00",
+    "monotonic": 4.39992175,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.741794+08:00",
+    "monotonic": 4.427730875,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.843487+08:00",
+    "monotonic": 4.529441625,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.863876+08:00",
+    "monotonic": 4.549831291,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.865271+08:00",
+    "monotonic": 4.551199125,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.865819+08:00",
+    "monotonic": 4.551737791,
+    "kind": "notify",
+    "hex": "a1 03 02 20 e5 a8 10 28 00 00 00 00 00 00 00 8b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.865883+08:00",
+    "monotonic": 4.551798791,
+    "kind": "accel",
+    "raw": [
+      544,
+      -6744,
+      4136
+    ],
+    "nominal_g": [
+      0.0664,
+      -0.8232,
+      0.5049
+    ],
+    "norm_raw": 7929.94,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.866195+08:00",
+    "monotonic": 4.552112333,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.866978+08:00",
+    "monotonic": 4.552899916,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.894046+08:00",
+    "monotonic": 4.579994041,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.894327+08:00",
+    "monotonic": 4.580247375,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.924114+08:00",
+    "monotonic": 4.610065416,
+    "kind": "notify",
+    "hex": "a1 03 02 30 e5 70 0f b4 00 00 00 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.924208+08:00",
+    "monotonic": 4.610124041,
+    "kind": "accel",
+    "raw": [
+      560,
+      -6800,
+      4020
+    ],
+    "nominal_g": [
+      0.0684,
+      -0.8301,
+      0.4907
+    ],
+    "norm_raw": 7919.22,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.924558+08:00",
+    "monotonic": 4.610479625,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.926166+08:00",
+    "monotonic": 4.612092583,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.926403+08:00",
+    "monotonic": 4.612319583,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.926784+08:00",
+    "monotonic": 4.612698916,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.927190+08:00",
+    "monotonic": 4.613101708,
+    "kind": "notify",
+    "hex": "a1 03 02 50 e5 68 0e 54 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.927218+08:00",
+    "monotonic": 4.613127666,
+    "kind": "accel",
+    "raw": [
+      592,
+      -6808,
+      3668
+    ],
+    "nominal_g": [
+      0.0723,
+      -0.8311,
+      0.4478
+    ],
+    "norm_raw": 7755.87,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.945161+08:00",
+    "monotonic": 4.631089291,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:30.954029+08:00",
+    "monotonic": 4.639969708,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.954321+08:00",
+    "monotonic": 4.64024075,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.983753+08:00",
+    "monotonic": 4.669679,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.983930+08:00",
+    "monotonic": 4.669840875,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.985610+08:00",
+    "monotonic": 4.671520458,
+    "kind": "notify",
+    "hex": "a1 03 02 bc e4 e8 0e 28 00 00 00 00 00 00 00 64",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.985645+08:00",
+    "monotonic": 4.671553958,
+    "kind": "accel",
+    "raw": [
+      700,
+      -6936,
+      3624
+    ],
+    "nominal_g": [
+      0.0854,
+      -0.8467,
+      0.4424
+    ],
+    "norm_raw": 7856.94,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.986041+08:00",
+    "monotonic": 4.671952875,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:30.986474+08:00",
+    "monotonic": 4.672387458,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.046329+08:00",
+    "monotonic": 4.732279625,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.148037+08:00",
+    "monotonic": 4.833987875,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.194261+08:00",
+    "monotonic": 4.880218833,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.194569+08:00",
+    "monotonic": 4.880489375,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.197007+08:00",
+    "monotonic": 4.882926583,
+    "kind": "notify",
+    "hex": "a1 03 fd f0 dc e0 16 a8 00 00 00 00 00 00 00 0b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.197064+08:00",
+    "monotonic": 4.882979291,
+    "kind": "accel",
+    "raw": [
+      -528,
+      -8992,
+      5800
+    ],
+    "nominal_g": [
+      -0.0645,
+      -1.0977,
+      0.708
+    ],
+    "norm_raw": 10713.3,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.223927+08:00",
+    "monotonic": 4.909941,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.224189+08:00",
+    "monotonic": 4.910099958,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.225682+08:00",
+    "monotonic": 4.911597416,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.226099+08:00",
+    "monotonic": 4.91200775,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.226682+08:00",
+    "monotonic": 4.912594708,
+    "kind": "notify",
+    "hex": "a1 03 00 64 dc 1c 16 d0 00 00 00 00 00 00 00 e6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.226716+08:00",
+    "monotonic": 4.912624333,
+    "kind": "accel",
+    "raw": [
+      100,
+      -9188,
+      5840
+    ],
+    "nominal_g": [
+      0.0122,
+      -1.1216,
+      0.7129
+    ],
+    "norm_raw": 10887.38,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.227017+08:00",
+    "monotonic": 4.91292675,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 03 0f ff 00 00 00 00 00 b6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.227596+08:00",
+    "monotonic": 4.913505291,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.249735+08:00",
+    "monotonic": 4.935671833,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.350405+08:00",
+    "monotonic": 5.036351166,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.434235+08:00",
+    "monotonic": 5.120184541,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.434560+08:00",
+    "monotonic": 5.12048375,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.435842+08:00",
+    "monotonic": 5.121765166,
+    "kind": "notify",
+    "hex": "a1 03 16 0c 15 e0 cd 3c 00 00 00 00 00 00 00 c4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.435932+08:00",
+    "monotonic": 5.121847625,
+    "kind": "accel",
+    "raw": [
+      5644,
+      5600,
+      -12996
+    ],
+    "nominal_g": [
+      0.689,
+      0.6836,
+      -1.5864
+    ],
+    "norm_raw": 15235.18,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.436344+08:00",
+    "monotonic": 5.1222675,
+    "kind": "notify",
+    "hex": "a1 04 00 02 00 05 00 06 0f ff 00 00 00 00 00 c0",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.436994+08:00",
+    "monotonic": 5.122927791,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.437239+08:00",
+    "monotonic": 5.123160333,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.437798+08:00",
+    "monotonic": 5.123717833,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.438095+08:00",
+    "monotonic": 5.124007041,
+    "kind": "notify",
+    "hex": "a1 03 16 0c 15 e0 cd 3c 00 00 00 00 00 00 00 c4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.438126+08:00",
+    "monotonic": 5.124035583,
+    "kind": "accel",
+    "raw": [
+      5644,
+      5600,
+      -12996
+    ],
+    "nominal_g": [
+      0.689,
+      0.6836,
+      -1.5864
+    ],
+    "norm_raw": 15235.18,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.452030+08:00",
+    "monotonic": 5.137972916,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.463586+08:00",
+    "monotonic": 5.149530708,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.464031+08:00",
+    "monotonic": 5.149955541,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.493750+08:00",
+    "monotonic": 5.179682458,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.494002+08:00",
+    "monotonic": 5.179917833,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.495450+08:00",
+    "monotonic": 5.181360583,
+    "kind": "notify",
+    "hex": "a1 03 16 bc 05 74 db 68 00 00 00 00 00 00 00 32",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.495487+08:00",
+    "monotonic": 5.181395166,
+    "kind": "accel",
+    "raw": [
+      5820,
+      1396,
+      -9368
+    ],
+    "nominal_g": [
+      0.7104,
+      0.1704,
+      -1.1436
+    ],
+    "norm_raw": 11116.68,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.495852+08:00",
+    "monotonic": 5.181764166,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.496213+08:00",
+    "monotonic": 5.182123666,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.553276+08:00",
+    "monotonic": 5.239214,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.584075+08:00",
+    "monotonic": 5.270032333,
+    "kind": "notify",
+    "hex": "73 12 00 00 1f 00 04 f7 00 00 13 00 00 00 00 b2",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.613843+08:00",
+    "monotonic": 5.299775833,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.614048+08:00",
+    "monotonic": 5.299959166,
+    "kind": "notify",
+    "hex": "a1 02 26 cb 00 00 00 00 00 00 00 00 00 00 00 94",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.615689+08:00",
+    "monotonic": 5.301605875,
+    "kind": "notify",
+    "hex": "a1 03 08 40 00 fc dd dc 00 00 00 00 00 00 00 a1",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.615731+08:00",
+    "monotonic": 5.301639291,
+    "kind": "accel",
+    "raw": [
+      2112,
+      252,
+      -8740
+    ],
+    "nominal_g": [
+      0.2578,
+      0.0308,
+      -1.0669
+    ],
+    "norm_raw": 8995.09,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.615898+08:00",
+    "monotonic": 5.301808333,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.616345+08:00",
+    "monotonic": 5.3022555,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.654874+08:00",
+    "monotonic": 5.340845083,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.755955+08:00",
+    "monotonic": 5.44189,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.824203+08:00",
+    "monotonic": 5.510139208,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.824505+08:00",
+    "monotonic": 5.510422958,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 00 00 00 00 00 00 00 00 00 00 00 93",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.827002+08:00",
+    "monotonic": 5.512921416,
+    "kind": "notify",
+    "hex": "a1 03 07 18 fd 94 df 64 00 00 00 00 00 00 00 97",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.827048+08:00",
+    "monotonic": 5.512955291,
+    "kind": "accel",
+    "raw": [
+      1816,
+      -620,
+      -8348
+    ],
+    "nominal_g": [
+      0.2217,
+      -0.0757,
+      -1.019
+    ],
+    "norm_raw": 8565.71,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.827320+08:00",
+    "monotonic": 5.513228416,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.828139+08:00",
+    "monotonic": 5.514049166,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.828551+08:00",
+    "monotonic": 5.514458833,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.853966+08:00",
+    "monotonic": 5.539904666,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 00 00 00 00 00 00 00 00 00 00 00 93",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.854297+08:00",
+    "monotonic": 5.540214375,
+    "kind": "notify",
+    "hex": "a1 03 07 18 fd 94 df 64 00 00 00 00 00 00 00 97",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.854342+08:00",
+    "monotonic": 5.540259333,
+    "kind": "accel",
+    "raw": [
+      1816,
+      -620,
+      -8348
+    ],
+    "nominal_g": [
+      0.2217,
+      -0.0757,
+      -1.019
+    ],
+    "norm_raw": 8565.71,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.855817+08:00",
+    "monotonic": 5.541779291,
+    "kind": "notify",
+    "hex": "a1 04 00 03 00 00 00 00 0f ff 00 00 00 00 00 b6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.856133+08:00",
+    "monotonic": 5.542051583,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.856456+08:00",
+    "monotonic": 5.542381208,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:31.856902+08:00",
+    "monotonic": 5.542855333,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.883718+08:00",
+    "monotonic": 5.569660833,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 00 00 00 00 00 00 00 00 00 00 00 93",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.884371+08:00",
+    "monotonic": 5.570292708,
+    "kind": "notify",
+    "hex": "a1 03 06 8c fe 10 de 30 00 00 00 00 00 00 00 52",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.884422+08:00",
+    "monotonic": 5.57033,
+    "kind": "accel",
+    "raw": [
+      1676,
+      -496,
+      -8656
+    ],
+    "nominal_g": [
+      0.2046,
+      -0.0605,
+      -1.0566
+    ],
+    "norm_raw": 8830.7,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.884831+08:00",
+    "monotonic": 5.570761291,
+    "kind": "notify",
+    "hex": "a1 04 00 02 00 00 00 00 0f ff 00 00 00 00 00 b5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.887226+08:00",
+    "monotonic": 5.573143333,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.913934+08:00",
+    "monotonic": 5.599870041,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.914131+08:00",
+    "monotonic": 5.600044666,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 00 00 00 00 00 00 00 00 00 00 00 93",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.915635+08:00",
+    "monotonic": 5.601550916,
+    "kind": "notify",
+    "hex": "a1 03 07 24 fd e4 dd a4 00 00 00 00 00 00 00 31",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.915682+08:00",
+    "monotonic": 5.601592041,
+    "kind": "accel",
+    "raw": [
+      1828,
+      -540,
+      -8796
+    ],
+    "nominal_g": [
+      0.2231,
+      -0.0659,
+      -1.0737
+    ],
+    "norm_raw": 9000.16,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.915918+08:00",
+    "monotonic": 5.601829291,
+    "kind": "notify",
+    "hex": "a1 04 00 02 00 05 00 02 0f ff 00 00 00 00 00 bc",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.916262+08:00",
+    "monotonic": 5.602174041,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:31.957105+08:00",
+    "monotonic": 5.643065833,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.058958+08:00",
+    "monotonic": 5.744912833,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.124315+08:00",
+    "monotonic": 5.810274,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.124653+08:00",
+    "monotonic": 5.81057625,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.125890+08:00",
+    "monotonic": 5.811811666,
+    "kind": "notify",
+    "hex": "a1 03 06 4c fe 2c df 78 00 00 00 00 00 00 00 77",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.125945+08:00",
+    "monotonic": 5.8118575,
+    "kind": "accel",
+    "raw": [
+      1612,
+      -468,
+      -8328
+    ],
+    "nominal_g": [
+      0.1968,
+      -0.0571,
+      -1.0166
+    ],
+    "norm_raw": 8495.48,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.126176+08:00",
+    "monotonic": 5.812090416,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 07 0f ff 00 00 00 00 00 ba",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.126903+08:00",
+    "monotonic": 5.812825,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.127189+08:00",
+    "monotonic": 5.813107041,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.127764+08:00",
+    "monotonic": 5.813676875,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 00 00 00 00 00 00 00 00 00 00 00 92",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.128054+08:00",
+    "monotonic": 5.813963208,
+    "kind": "notify",
+    "hex": "a1 03 05 b0 fd 6c df f8 00 00 00 00 00 00 00 99",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.128079+08:00",
+    "monotonic": 5.813986625,
+    "kind": "accel",
+    "raw": [
+      1456,
+      -660,
+      -8200
+    ],
+    "nominal_g": [
+      0.1777,
+      -0.0806,
+      -1.001
+    ],
+    "norm_raw": 8354.37,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.153837+08:00",
+    "monotonic": 5.839768958,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.154004+08:00",
+    "monotonic": 5.839915458,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.160269+08:00",
+    "monotonic": 5.846189666,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.214002+08:00",
+    "monotonic": 5.8999495,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.214203+08:00",
+    "monotonic": 5.900114125,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 00 00 00 00 00 00 00 00 00 00 00 93",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.215619+08:00",
+    "monotonic": 5.901536125,
+    "kind": "notify",
+    "hex": "a1 03 03 c4 fc 10 df c8 00 00 00 00 00 00 00 1e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.215663+08:00",
+    "monotonic": 5.901570166,
+    "kind": "accel",
+    "raw": [
+      964,
+      -1008,
+      -8248
+    ],
+    "nominal_g": [
+      0.1177,
+      -0.123,
+      -1.0068
+    ],
+    "norm_raw": 8365.1,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.215856+08:00",
+    "monotonic": 5.901765958,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.216302+08:00",
+    "monotonic": 5.902213583,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.261741+08:00",
+    "monotonic": 5.947698916,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.363533+08:00",
+    "monotonic": 6.049477625,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.424202+08:00",
+    "monotonic": 6.110154625,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.424514+08:00",
+    "monotonic": 6.110437416,
+    "kind": "notify",
+    "hex": "a1 02 26 c8 00 00 00 00 00 00 00 00 00 00 00 91",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.427663+08:00",
+    "monotonic": 6.113592708,
+    "kind": "notify",
+    "hex": "a1 03 05 8c fc c8 dd 10 00 00 00 00 00 00 00 e6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.427734+08:00",
+    "monotonic": 6.113650041,
+    "kind": "accel",
+    "raw": [
+      1420,
+      -824,
+      -8944
+    ],
+    "nominal_g": [
+      0.1733,
+      -0.1006,
+      -1.0918
+    ],
+    "norm_raw": 9093.43,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.428091+08:00",
+    "monotonic": 6.114018541,
+    "kind": "notify",
+    "hex": "a1 04 00 07 00 00 00 00 0f ff 00 00 00 00 00 ba",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.454111+08:00",
+    "monotonic": 6.140060166,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.454430+08:00",
+    "monotonic": 6.140350875,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.455884+08:00",
+    "monotonic": 6.141804041,
+    "kind": "notify",
+    "hex": "a1 02 26 c8 00 00 00 00 00 00 00 00 00 00 00 91",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.456196+08:00",
+    "monotonic": 6.142113833,
+    "kind": "notify",
+    "hex": "a1 03 05 8c fc c8 dd 10 00 00 00 00 00 00 00 e6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.456244+08:00",
+    "monotonic": 6.142158208,
+    "kind": "accel",
+    "raw": [
+      1420,
+      -824,
+      -8944
+    ],
+    "nominal_g": [
+      0.1733,
+      -0.1006,
+      -1.0918
+    ],
+    "norm_raw": 9093.43,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.456605+08:00",
+    "monotonic": 6.142533541,
+    "kind": "notify",
+    "hex": "a1 04 00 01 00 00 00 00 0f ff 00 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.456922+08:00",
+    "monotonic": 6.142840416,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.464981+08:00",
+    "monotonic": 6.150907041,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.514184+08:00",
+    "monotonic": 6.20013275,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.514486+08:00",
+    "monotonic": 6.200404708,
+    "kind": "notify",
+    "hex": "a1 02 26 c8 00 00 00 00 00 00 00 00 00 00 00 91",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.515633+08:00",
+    "monotonic": 6.201551625,
+    "kind": "notify",
+    "hex": "a1 03 06 18 fc 38 dd 20 00 00 00 00 00 00 00 f3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.515691+08:00",
+    "monotonic": 6.201605833,
+    "kind": "accel",
+    "raw": [
+      1560,
+      -968,
+      -8928
+    ],
+    "nominal_g": [
+      0.1904,
+      -0.1182,
+      -1.0898
+    ],
+    "norm_raw": 9114.81,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.516015+08:00",
+    "monotonic": 6.201938375,
+    "kind": "notify",
+    "hex": "a1 04 00 05 00 05 00 07 0f ff 00 00 00 00 00 c4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.516382+08:00",
+    "monotonic": 6.202305375,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.566602+08:00",
+    "monotonic": 6.252559208,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.668417+08:00",
+    "monotonic": 6.3543865,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.724116+08:00",
+    "monotonic": 6.4100565,
+    "kind": "notify",
+    "hex": "a1 01 00 b6 00 00 00 00 00 00 00 00 00 00 00 58",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.724354+08:00",
+    "monotonic": 6.4102715,
+    "kind": "notify",
+    "hex": "a1 02 26 c8 00 00 00 00 00 00 00 00 00 00 00 91",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.725810+08:00",
+    "monotonic": 6.411726833,
+    "kind": "notify",
+    "hex": "a1 03 0d 18 00 c0 d2 9c 00 00 00 00 00 00 00 f7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.725855+08:00",
+    "monotonic": 6.411763541,
+    "kind": "accel",
+    "raw": [
+      3352,
+      192,
+      -11620
+    ],
+    "nominal_g": [
+      0.4092,
+      0.0234,
+      -1.4185
+    ],
+    "norm_raw": 12095.34,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.726131+08:00",
+    "monotonic": 6.412042291,
+    "kind": "notify",
+    "hex": "a1 04 00 02 00 00 00 01 0f ff 00 00 00 00 00 b6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.726822+08:00",
+    "monotonic": 6.412734291,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.727289+08:00",
+    "monotonic": 6.413204875,
+    "kind": "notify",
+    "hex": "a1 01 00 b6 00 00 00 00 00 00 00 00 00 00 00 58",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.727864+08:00",
+    "monotonic": 6.413779791,
+    "kind": "notify",
+    "hex": "a1 02 26 c8 00 00 00 00 00 00 00 00 00 00 00 91",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.728292+08:00",
+    "monotonic": 6.414201833,
+    "kind": "notify",
+    "hex": "a1 03 09 94 fd 68 da 90 00 00 00 00 00 00 00 10",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.728317+08:00",
+    "monotonic": 6.414225708,
+    "kind": "accel",
+    "raw": [
+      2452,
+      -664,
+      -9584
+    ],
+    "nominal_g": [
+      0.2993,
+      -0.0811,
+      -1.1699
+    ],
+    "norm_raw": 9914.95,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.754057+08:00",
+    "monotonic": 6.440004166,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.754326+08:00",
+    "monotonic": 6.440247375,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.770160+08:00",
+    "monotonic": 6.456083291,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.814113+08:00",
+    "monotonic": 6.500066291,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.814413+08:00",
+    "monotonic": 6.500334333,
+    "kind": "notify",
+    "hex": "a1 02 26 c7 00 00 00 00 00 00 00 00 00 00 00 90",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.815724+08:00",
+    "monotonic": 6.50165075,
+    "kind": "notify",
+    "hex": "a1 03 04 f4 fc 60 f3 50 00 00 00 00 00 00 00 3b",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.815792+08:00",
+    "monotonic": 6.501708458,
+    "kind": "accel",
+    "raw": [
+      1268,
+      -928,
+      -3248
+    ],
+    "nominal_g": [
+      0.1548,
+      -0.1133,
+      -0.3965
+    ],
+    "norm_raw": 3608.12,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.816177+08:00",
+    "monotonic": 6.50210625,
+    "kind": "notify",
+    "hex": "a1 04 00 07 00 03 00 00 0f ff 00 00 00 00 00 bd",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.816454+08:00",
+    "monotonic": 6.502373708,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.871769+08:00",
+    "monotonic": 6.557717791,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:32.874160+08:00",
+    "monotonic": 6.560093125,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.874514+08:00",
+    "monotonic": 6.560428375,
+    "kind": "notify",
+    "hex": "a1 02 26 c7 00 00 00 00 00 00 00 00 00 00 00 90",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.875581+08:00",
+    "monotonic": 6.561494666,
+    "kind": "notify",
+    "hex": "a1 03 06 b8 fc 34 07 f8 00 00 00 00 00 00 00 91",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.875624+08:00",
+    "monotonic": 6.561533416,
+    "kind": "accel",
+    "raw": [
+      1720,
+      -972,
+      2040
+    ],
+    "nominal_g": [
+      0.21,
+      -0.1187,
+      0.249
+    ],
+    "norm_raw": 2839.86,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.875888+08:00",
+    "monotonic": 6.5618,
+    "kind": "notify",
+    "hex": "a1 04 00 0a 00 04 00 06 0f ff 00 00 00 00 00 c7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.876393+08:00",
+    "monotonic": 6.562310833,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.934156+08:00",
+    "monotonic": 6.620103666,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.934460+08:00",
+    "monotonic": 6.620385125,
+    "kind": "notify",
+    "hex": "a1 02 26 c7 00 00 00 00 00 00 00 00 00 00 00 90",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.935643+08:00",
+    "monotonic": 6.621563416,
+    "kind": "notify",
+    "hex": "a1 03 0f 1c e9 e0 21 c8 00 00 00 00 00 00 00 81",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.935699+08:00",
+    "monotonic": 6.621613708,
+    "kind": "accel",
+    "raw": [
+      3868,
+      -5664,
+      8648
+    ],
+    "nominal_g": [
+      0.4722,
+      -0.6914,
+      1.0557
+    ],
+    "norm_raw": 11037.67,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.936049+08:00",
+    "monotonic": 6.621965833,
+    "kind": "notify",
+    "hex": "a1 04 00 09 00 00 00 04 0f ff 00 00 00 00 00 c0",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.936398+08:00",
+    "monotonic": 6.622314166,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:32.973544+08:00",
+    "monotonic": 6.659498083,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.075355+08:00",
+    "monotonic": 6.761300666,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.144188+08:00",
+    "monotonic": 6.8301365,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.144453+08:00",
+    "monotonic": 6.830371375,
+    "kind": "notify",
+    "hex": "a1 02 26 c6 00 00 00 00 00 00 00 00 00 00 00 8f",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.145785+08:00",
+    "monotonic": 6.831699541,
+    "kind": "notify",
+    "hex": "a1 03 09 d0 e6 68 11 0c 00 00 00 00 00 00 00 e8",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.145828+08:00",
+    "monotonic": 6.83173625,
+    "kind": "accel",
+    "raw": [
+      2512,
+      -6552,
+      4364
+    ],
+    "nominal_g": [
+      0.3066,
+      -0.7998,
+      0.5327
+    ],
+    "norm_raw": 8263.37,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.146221+08:00",
+    "monotonic": 6.832136916,
+    "kind": "notify",
+    "hex": "a1 04 00 01 00 00 00 01 0f ff 00 00 00 00 00 b5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.147008+08:00",
+    "monotonic": 6.83292225,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.147305+08:00",
+    "monotonic": 6.833214333,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.147915+08:00",
+    "monotonic": 6.833828375,
+    "kind": "notify",
+    "hex": "a1 02 26 c6 00 00 00 00 00 00 00 00 00 00 00 8f",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.148210+08:00",
+    "monotonic": 6.834118416,
+    "kind": "notify",
+    "hex": "a1 03 09 d0 e6 68 11 0c 00 00 00 00 00 00 00 e8",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.148232+08:00",
+    "monotonic": 6.83413875,
+    "kind": "accel",
+    "raw": [
+      2512,
+      -6552,
+      4364
+    ],
+    "nominal_g": [
+      0.3066,
+      -0.7998,
+      0.5327
+    ],
+    "norm_raw": 8263.37,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.174148+08:00",
+    "monotonic": 6.860105458,
+    "kind": "notify",
+    "hex": "a1 04 00 01 00 04 00 05 0f ff 00 00 00 00 00 bd",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.174460+08:00",
+    "monotonic": 6.860382208,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.176152+08:00",
+    "monotonic": 6.862078041,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.234162+08:00",
+    "monotonic": 6.920109,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.234498+08:00",
+    "monotonic": 6.920427041,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.235693+08:00",
+    "monotonic": 6.92161575,
+    "kind": "notify",
+    "hex": "a1 03 09 c0 e6 a4 0e d4 00 00 00 00 00 00 00 d9",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.235754+08:00",
+    "monotonic": 6.921669291,
+    "kind": "accel",
+    "raw": [
+      2496,
+      -6492,
+      3796
+    ],
+    "nominal_g": [
+      0.3047,
+      -0.7925,
+      0.4634
+    ],
+    "norm_raw": 7923.74,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.236163+08:00",
+    "monotonic": 6.922096583,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.236518+08:00",
+    "monotonic": 6.922436875,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.277756+08:00",
+    "monotonic": 6.9637055,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.379506+08:00",
+    "monotonic": 7.065450208,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.443958+08:00",
+    "monotonic": 7.12989525,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.444183+08:00",
+    "monotonic": 7.130099458,
+    "kind": "notify",
+    "hex": "a1 02 26 c6 00 00 00 00 00 00 00 00 00 00 00 8f",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.445768+08:00",
+    "monotonic": 7.131685416,
+    "kind": "notify",
+    "hex": "a1 03 08 08 e5 d8 10 90 00 00 00 00 00 00 00 11",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.445814+08:00",
+    "monotonic": 7.131726791,
+    "kind": "accel",
+    "raw": [
+      2056,
+      -6696,
+      4240
+    ],
+    "nominal_g": [
+      0.251,
+      -0.8174,
+      0.5176
+    ],
+    "norm_raw": 8187.87,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.446259+08:00",
+    "monotonic": 7.13217575,
+    "kind": "notify",
+    "hex": "a1 04 00 01 00 00 00 00 0f ff 00 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.447133+08:00",
+    "monotonic": 7.13306675,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.447411+08:00",
+    "monotonic": 7.133335583,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.448046+08:00",
+    "monotonic": 7.133971166,
+    "kind": "notify",
+    "hex": "a1 02 26 c6 00 00 00 00 00 00 00 00 00 00 00 8f",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.448363+08:00",
+    "monotonic": 7.134281,
+    "kind": "notify",
+    "hex": "a1 03 08 9c e5 60 10 08 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.448401+08:00",
+    "monotonic": 7.134314666,
+    "kind": "accel",
+    "raw": [
+      2204,
+      -6816,
+      4104
+    ],
+    "nominal_g": [
+      0.269,
+      -0.832,
+      0.501
+    ],
+    "norm_raw": 8255.8,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.473966+08:00",
+    "monotonic": 7.159903791,
+    "kind": "notify",
+    "hex": "a1 04 00 09 00 03 00 05 0f ff 00 00 00 00 00 c4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.474249+08:00",
+    "monotonic": 7.160171375,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.480779+08:00",
+    "monotonic": 7.166701958,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.534110+08:00",
+    "monotonic": 7.220062125,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.534409+08:00",
+    "monotonic": 7.220335583,
+    "kind": "notify",
+    "hex": "a1 02 26 c6 00 00 00 00 00 00 00 00 00 00 00 8f",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.535699+08:00",
+    "monotonic": 7.22163025,
+    "kind": "notify",
+    "hex": "a1 03 08 4c e5 f8 0f 94 00 00 00 00 00 00 00 78",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.535775+08:00",
+    "monotonic": 7.22169075,
+    "kind": "accel",
+    "raw": [
+      2124,
+      -6664,
+      3988
+    ],
+    "nominal_g": [
+      0.2593,
+      -0.8135,
+      0.4868
+    ],
+    "norm_raw": 8051.36,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.536207+08:00",
+    "monotonic": 7.222130708,
+    "kind": "notify",
+    "hex": "a1 04 00 07 00 0a 00 01 0f ff 00 00 00 00 00 c5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.536476+08:00",
+    "monotonic": 7.222398333,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.581890+08:00",
+    "monotonic": 7.2678555,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.683729+08:00",
+    "monotonic": 7.369679583,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.774206+08:00",
+    "monotonic": 7.460165083,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.774533+08:00",
+    "monotonic": 7.460457416,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.776062+08:00",
+    "monotonic": 7.461995375,
+    "kind": "notify",
+    "hex": "a1 03 07 18 e4 48 0e 5c 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.776138+08:00",
+    "monotonic": 7.462061833,
+    "kind": "accel",
+    "raw": [
+      1816,
+      -7096,
+      3676
+    ],
+    "nominal_g": [
+      0.2217,
+      -0.8662,
+      0.4487
+    ],
+    "norm_raw": 8195.37,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.776518+08:00",
+    "monotonic": 7.462439958,
+    "kind": "notify",
+    "hex": "a1 04 00 02 00 02 00 00 0f ff 00 00 00 00 00 b7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.777012+08:00",
+    "monotonic": 7.462925208,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.777469+08:00",
+    "monotonic": 7.463383958,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.778429+08:00",
+    "monotonic": 7.464341333,
+    "kind": "notify",
+    "hex": "a1 02 26 c5 00 00 00 00 00 00 00 00 00 00 00 8e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.778752+08:00",
+    "monotonic": 7.464663,
+    "kind": "notify",
+    "hex": "a1 03 07 18 e4 48 0e 5c 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.778777+08:00",
+    "monotonic": 7.464686583,
+    "kind": "accel",
+    "raw": [
+      1816,
+      -7096,
+      3676
+    ],
+    "nominal_g": [
+      0.2217,
+      -0.8662,
+      0.4487
+    ],
+    "norm_raw": 8195.37,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.779181+08:00",
+    "monotonic": 7.465093583,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.779524+08:00",
+    "monotonic": 7.465437458,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.785095+08:00",
+    "monotonic": 7.471041583,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.803672+08:00",
+    "monotonic": 7.489597583,
+    "kind": "notify",
+    "hex": "73 12 00 00 21 00 05 49 00 00 14 00 00 00 00 08",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.834038+08:00",
+    "monotonic": 7.519982875,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.834325+08:00",
+    "monotonic": 7.520244833,
+    "kind": "notify",
+    "hex": "a1 02 26 c4 00 00 00 00 00 00 00 00 00 00 00 8d",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.835624+08:00",
+    "monotonic": 7.521544083,
+    "kind": "notify",
+    "hex": "a1 03 06 f0 e4 b4 0e 14 00 00 00 00 00 00 00 54",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.835687+08:00",
+    "monotonic": 7.521601833,
+    "kind": "accel",
+    "raw": [
+      1776,
+      -6988,
+      3604
+    ],
+    "nominal_g": [
+      0.2168,
+      -0.853,
+      0.4399
+    ],
+    "norm_raw": 8060.72,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.835996+08:00",
+    "monotonic": 7.521915,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 07 00 0a 0f ff 00 00 00 00 00 c4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.836464+08:00",
+    "monotonic": 7.52238125,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.864065+08:00",
+    "monotonic": 7.550015666,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.886784+08:00",
+    "monotonic": 7.572728958,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:33.924264+08:00",
+    "monotonic": 7.61021875,
+    "kind": "notify",
+    "hex": "a1 02 26 c4 00 00 00 00 00 00 00 00 00 00 00 8d",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.924582+08:00",
+    "monotonic": 7.610504875,
+    "kind": "notify",
+    "hex": "a1 03 07 48 e4 54 0d e0 00 00 00 00 00 00 00 18",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.924642+08:00",
+    "monotonic": 7.610556916,
+    "kind": "accel",
+    "raw": [
+      1864,
+      -7084,
+      3552
+    ],
+    "nominal_g": [
+      0.2275,
+      -0.8647,
+      0.4336
+    ],
+    "norm_raw": 8140.9,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.926403+08:00",
+    "monotonic": 7.612333583,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 0f ff 00 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.926720+08:00",
+    "monotonic": 7.612633333,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.953967+08:00",
+    "monotonic": 7.639903791,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 00 00 00 00 00 00 00 00 00 00 5a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.954123+08:00",
+    "monotonic": 7.640031791,
+    "kind": "notify",
+    "hex": "a1 02 0f 82 00 00 00 00 00 00 00 00 00 00 00 34",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.955499+08:00",
+    "monotonic": 7.64140975,
+    "kind": "notify",
+    "hex": "a1 03 08 7c e5 08 0f 08 00 00 00 00 00 00 00 2c",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.955534+08:00",
+    "monotonic": 7.641441666,
+    "kind": "accel",
+    "raw": [
+      2172,
+      -6904,
+      3848
+    ],
+    "nominal_g": [
+      0.2651,
+      -0.8428,
+      0.4697
+    ],
+    "norm_raw": 8196.94,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.955842+08:00",
+    "monotonic": 7.641753708,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 03 00 00 0f ff 00 00 00 00 00 b6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.956274+08:00",
+    "monotonic": 7.642184083,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:33.988537+08:00",
+    "monotonic": 7.674483291,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.044084+08:00",
+    "monotonic": 7.730025541,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 00 00 00 00 00 00 00 00 00 00 59",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.044310+08:00",
+    "monotonic": 7.730223958,
+    "kind": "notify",
+    "hex": "a1 02 26 c6 00 00 00 00 00 00 00 00 00 00 00 8f",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.045565+08:00",
+    "monotonic": 7.731482416,
+    "kind": "notify",
+    "hex": "a1 03 08 68 e7 bc 12 38 00 00 00 00 00 00 00 01",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.045613+08:00",
+    "monotonic": 7.731523625,
+    "kind": "accel",
+    "raw": [
+      2152,
+      -6212,
+      4664
+    ],
+    "nominal_g": [
+      0.2627,
+      -0.7583,
+      0.5693
+    ],
+    "norm_raw": 8060.58,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.045934+08:00",
+    "monotonic": 7.73184725,
+    "kind": "notify",
+    "hex": "a1 04 00 07 00 04 00 06 0f ff 00 00 00 00 00 c4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.046360+08:00",
+    "monotonic": 7.732277375,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.090239+08:00",
+    "monotonic": 7.776200791,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.192068+08:00",
+    "monotonic": 7.87802525,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.254143+08:00",
+    "monotonic": 7.94009425,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 ab 00 70 00 3b 01 00 00 00 00 b1",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.254434+08:00",
+    "monotonic": 7.940359291,
+    "kind": "notify",
+    "hex": "a1 02 26 c3 27 83 26 c1 00 c2 01 00 00 00 00 e0",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.255926+08:00",
+    "monotonic": 7.941846666,
+    "kind": "notify",
+    "hex": "a1 03 0c 4c d5 74 1b 9c 00 00 00 00 00 00 00 fc",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.255988+08:00",
+    "monotonic": 7.941901708,
+    "kind": "accel",
+    "raw": [
+      3148,
+      -10892,
+      7068
+    ],
+    "nominal_g": [
+      0.3843,
+      -1.3296,
+      0.8628
+    ],
+    "norm_raw": 13360.47,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.256282+08:00",
+    "monotonic": 7.942200166,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.256912+08:00",
+    "monotonic": 7.942830708,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.257323+08:00",
+    "monotonic": 7.943243916,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 ab 00 70 00 3b 01 00 00 00 00 b1",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.258197+08:00",
+    "monotonic": 7.944115666,
+    "kind": "notify",
+    "hex": "a1 02 26 c3 27 83 26 c1 00 c2 01 00 00 00 00 e0",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.258526+08:00",
+    "monotonic": 7.944442541,
+    "kind": "notify",
+    "hex": "a1 03 0c 4c d5 74 1b 9c 00 00 00 00 00 00 00 fc",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.258564+08:00",
+    "monotonic": 7.944478375,
+    "kind": "accel",
+    "raw": [
+      3148,
+      -10892,
+      7068
+    ],
+    "nominal_g": [
+      0.3843,
+      -1.3296,
+      0.8628
+    ],
+    "norm_raw": 13360.47,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.258960+08:00",
+    "monotonic": 7.944880208,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.283704+08:00",
+    "monotonic": 7.969629125,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.293773+08:00",
+    "monotonic": 7.979705291,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.395499+08:00",
+    "monotonic": 8.081463791,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.464163+08:00",
+    "monotonic": 8.15011275,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 ab 00 70 00 3b 01 00 00 00 00 b0",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.464392+08:00",
+    "monotonic": 8.15030625,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 27 83 26 c1 00 c2 01 00 00 00 00 e7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.465781+08:00",
+    "monotonic": 8.151704833,
+    "kind": "notify",
+    "hex": "a1 03 f7 6c 03 74 ec d4 00 00 00 00 00 00 00 3e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.465842+08:00",
+    "monotonic": 8.151755541,
+    "kind": "accel",
+    "raw": [
+      -2196,
+      884,
+      -4908
+    ],
+    "nominal_g": [
+      -0.2681,
+      0.1079,
+      -0.5991
+    ],
+    "norm_raw": 5449.07,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.466224+08:00",
+    "monotonic": 8.152139541,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.466848+08:00",
+    "monotonic": 8.152770416,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.467305+08:00",
+    "monotonic": 8.153222625,
+    "kind": "notify",
+    "hex": "a1 01 00 b7 00 ab 00 70 00 3b 01 00 00 00 00 b0",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.468170+08:00",
+    "monotonic": 8.154089666,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 27 83 26 c1 00 c2 01 00 00 00 00 e7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.468503+08:00",
+    "monotonic": 8.154420708,
+    "kind": "notify",
+    "hex": "a1 03 f7 6c 03 74 ec d4 00 00 00 00 00 00 00 3e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.468548+08:00",
+    "monotonic": 8.1544625,
+    "kind": "accel",
+    "raw": [
+      -2196,
+      884,
+      -4908
+    ],
+    "nominal_g": [
+      -0.2681,
+      0.1079,
+      -0.5991
+    ],
+    "norm_raw": 5449.07,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.468879+08:00",
+    "monotonic": 8.154797833,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.493904+08:00",
+    "monotonic": 8.179845833,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.496491+08:00",
+    "monotonic": 8.182404541,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.597994+08:00",
+    "monotonic": 8.283942,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.674274+08:00",
+    "monotonic": 8.360231083,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 ab 00 70 00 3b 01 00 00 00 00 b1",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.674581+08:00",
+    "monotonic": 8.360503041,
+    "kind": "notify",
+    "hex": "a1 02 26 cd 27 83 26 c1 00 c2 01 00 00 00 00 ea",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.675858+08:00",
+    "monotonic": 8.361789375,
+    "kind": "notify",
+    "hex": "a1 03 e4 c8 0c dc f4 e8 00 00 00 00 00 00 00 14",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.675931+08:00",
+    "monotonic": 8.3618465,
+    "kind": "accel",
+    "raw": [
+      -6968,
+      3292,
+      -2840
+    ],
+    "nominal_g": [
+      -0.8506,
+      0.4019,
+      -0.3467
+    ],
+    "norm_raw": 8213.15,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.676259+08:00",
+    "monotonic": 8.362179708,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.676516+08:00",
+    "monotonic": 8.362435291,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.677214+08:00",
+    "monotonic": 8.363132,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 ab 00 70 00 3b 01 00 00 00 00 b1",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.678092+08:00",
+    "monotonic": 8.364005333,
+    "kind": "notify",
+    "hex": "a1 02 26 cd 27 83 26 c1 00 c2 01 00 00 00 00 ea",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.678469+08:00",
+    "monotonic": 8.364386958,
+    "kind": "notify",
+    "hex": "a1 03 e2 44 0b ac f6 dc 00 00 00 00 00 00 00 53",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.678507+08:00",
+    "monotonic": 8.364418041,
+    "kind": "accel",
+    "raw": [
+      -7612,
+      2988,
+      -2340
+    ],
+    "nominal_g": [
+      -0.9292,
+      0.3647,
+      -0.2856
+    ],
+    "norm_raw": 8505.66,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.680776+08:00",
+    "monotonic": 8.36669025,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.699621+08:00",
+    "monotonic": 8.385558125,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.703645+08:00",
+    "monotonic": 8.389572208,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.733960+08:00",
+    "monotonic": 8.419897041,
+    "kind": "notify",
+    "hex": "a1 01 00 b8 00 ab 00 70 00 3b 01 00 00 00 00 b1",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.734181+08:00",
+    "monotonic": 8.420098041,
+    "kind": "notify",
+    "hex": "a1 02 26 cd 27 83 26 c1 00 c2 01 00 00 00 00 ea",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.735537+08:00",
+    "monotonic": 8.421448416,
+    "kind": "notify",
+    "hex": "a1 03 e0 f4 0a ec f6 bc 00 00 00 00 00 00 00 20",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.735575+08:00",
+    "monotonic": 8.421483833,
+    "kind": "accel",
+    "raw": [
+      -7948,
+      2796,
+      -2372
+    ],
+    "nominal_g": [
+      -0.9702,
+      0.3413,
+      -0.2896
+    ],
+    "norm_raw": 8752.98,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.735882+08:00",
+    "monotonic": 8.421796208,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.736243+08:00",
+    "monotonic": 8.422153625,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.801357+08:00",
+    "monotonic": 8.487309875,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.903133+08:00",
+    "monotonic": 8.589093625,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:34.944159+08:00",
+    "monotonic": 8.630111,
+    "kind": "notify",
+    "hex": "a1 01 00 ba 00 ab 00 70 00 3b 01 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.944472+08:00",
+    "monotonic": 8.630394958,
+    "kind": "notify",
+    "hex": "a1 02 26 cd 27 83 26 c1 00 c2 01 00 00 00 00 ea",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.945872+08:00",
+    "monotonic": 8.631792416,
+    "kind": "notify",
+    "hex": "a1 03 e2 20 09 08 f7 a0 00 00 00 00 00 00 00 4e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.945929+08:00",
+    "monotonic": 8.631843333,
+    "kind": "accel",
+    "raw": [
+      -7648,
+      2312,
+      -2144
+    ],
+    "nominal_g": [
+      -0.9336,
+      0.2822,
+      -0.2617
+    ],
+    "norm_raw": 8272.48,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.946325+08:00",
+    "monotonic": 8.632250916,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.946857+08:00",
+    "monotonic": 8.632776916,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.947331+08:00",
+    "monotonic": 8.63325375,
+    "kind": "notify",
+    "hex": "a1 01 00 ba 00 ab 00 70 00 3b 01 00 00 00 00 b3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.948102+08:00",
+    "monotonic": 8.634017583,
+    "kind": "notify",
+    "hex": "a1 02 26 cd 27 83 26 c1 00 c2 01 00 00 00 00 ea",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.948420+08:00",
+    "monotonic": 8.634332208,
+    "kind": "notify",
+    "hex": "a1 03 e2 20 09 08 f7 a0 00 00 00 00 00 00 00 4e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.948448+08:00",
+    "monotonic": 8.634356625,
+    "kind": "accel",
+    "raw": [
+      -7648,
+      2312,
+      -2144
+    ],
+    "nominal_g": [
+      -0.9336,
+      0.2822,
+      -0.2617
+    ],
+    "norm_raw": 8272.48,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.948803+08:00",
+    "monotonic": 8.634715583,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:34.973904+08:00",
+    "monotonic": 8.659849083,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.004844+08:00",
+    "monotonic": 8.690786291,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.106493+08:00",
+    "monotonic": 8.792459125,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.154063+08:00",
+    "monotonic": 8.840006458,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 ab 00 70 00 3b 01 00 00 00 00 b2",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.154404+08:00",
+    "monotonic": 8.840334291,
+    "kind": "notify",
+    "hex": "a1 02 26 cc 27 83 26 c1 00 c2 01 00 00 00 00 e9",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.155931+08:00",
+    "monotonic": 8.841856416,
+    "kind": "notify",
+    "hex": "a1 03 e1 bc 07 e8 f7 fc 00 00 00 00 00 00 00 23",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.155997+08:00",
+    "monotonic": 8.84191925,
+    "kind": "accel",
+    "raw": [
+      -7748,
+      2024,
+      -2052
+    ],
+    "nominal_g": [
+      -0.9458,
+      0.2471,
+      -0.2505
+    ],
+    "norm_raw": 8266.73,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.156360+08:00",
+    "monotonic": 8.842281833,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.156900+08:00",
+    "monotonic": 8.8428195,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.157360+08:00",
+    "monotonic": 8.843282416,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 ab 00 70 00 3b 01 00 00 00 00 b2",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.158116+08:00",
+    "monotonic": 8.844035916,
+    "kind": "notify",
+    "hex": "a1 02 26 cc 27 83 26 c1 00 c2 01 00 00 00 00 e9",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.158415+08:00",
+    "monotonic": 8.844328541,
+    "kind": "notify",
+    "hex": "a1 03 e1 dc 07 b4 f7 4c 00 00 00 00 00 00 00 5f",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.158446+08:00",
+    "monotonic": 8.844354958,
+    "kind": "accel",
+    "raw": [
+      -7716,
+      1972,
+      -2228
+    ],
+    "nominal_g": [
+      -0.9419,
+      0.2407,
+      -0.272
+    ],
+    "norm_raw": 8269.79,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.158768+08:00",
+    "monotonic": 8.844680375,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.184176+08:00",
+    "monotonic": 8.870131166,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.208349+08:00",
+    "monotonic": 8.894297291,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.310130+08:00",
+    "monotonic": 8.996077625,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.363966+08:00",
+    "monotonic": 9.049894458,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.364115+08:00",
+    "monotonic": 9.050023291,
+    "kind": "notify",
+    "hex": "a1 02 26 cb 27 83 26 c1 00 c2 01 00 00 00 00 e8",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.365749+08:00",
+    "monotonic": 9.051665333,
+    "kind": "notify",
+    "hex": "a1 03 e5 9c 0a c0 f3 60 00 00 00 00 00 00 00 42",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.365789+08:00",
+    "monotonic": 9.051695708,
+    "kind": "accel",
+    "raw": [
+      -6756,
+      2752,
+      -3232
+    ],
+    "nominal_g": [
+      -0.8247,
+      0.3359,
+      -0.3945
+    ],
+    "norm_raw": 7978.9,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.366149+08:00",
+    "monotonic": 9.052058666,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.366736+08:00",
+    "monotonic": 9.052644666,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.367191+08:00",
+    "monotonic": 9.053098583,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.368053+08:00",
+    "monotonic": 9.05395925,
+    "kind": "notify",
+    "hex": "a1 02 26 cb 27 83 26 c1 00 c2 01 00 00 00 00 e8",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.368406+08:00",
+    "monotonic": 9.054312666,
+    "kind": "notify",
+    "hex": "a1 03 e5 9c 0a c0 f3 60 00 00 00 00 00 00 00 42",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.368423+08:00",
+    "monotonic": 9.054328666,
+    "kind": "accel",
+    "raw": [
+      -6756,
+      2752,
+      -3232
+    ],
+    "nominal_g": [
+      -0.8247,
+      0.3359,
+      -0.3945
+    ],
+    "norm_raw": 7978.9,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.368830+08:00",
+    "monotonic": 9.054738833,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.393710+08:00",
+    "monotonic": 9.079621958,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.411805+08:00",
+    "monotonic": 9.097731833,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.513299+08:00",
+    "monotonic": 9.199245708,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.574189+08:00",
+    "monotonic": 9.260146,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.574501+08:00",
+    "monotonic": 9.260423416,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 27 83 26 c1 00 c2 01 00 00 00 00 e6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.575926+08:00",
+    "monotonic": 9.261854958,
+    "kind": "notify",
+    "hex": "a1 03 25 78 e6 f0 03 28 00 00 00 00 00 00 00 42",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.575996+08:00",
+    "monotonic": 9.261911625,
+    "kind": "accel",
+    "raw": [
+      9592,
+      -6416,
+      808
+    ],
+    "nominal_g": [
+      1.1709,
+      -0.7832,
+      0.0986
+    ],
+    "norm_raw": 11568.25,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.576347+08:00",
+    "monotonic": 9.262272083,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.576750+08:00",
+    "monotonic": 9.26267125,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.577331+08:00",
+    "monotonic": 9.263246458,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.577955+08:00",
+    "monotonic": 9.263875791,
+    "kind": "notify",
+    "hex": "a1 02 26 c9 27 83 26 c1 00 c2 01 00 00 00 00 e6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.578252+08:00",
+    "monotonic": 9.26416875,
+    "kind": "notify",
+    "hex": "a1 03 25 78 e6 f0 03 28 00 00 00 00 00 00 00 42",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.578292+08:00",
+    "monotonic": 9.264201875,
+    "kind": "accel",
+    "raw": [
+      9592,
+      -6416,
+      808
+    ],
+    "nominal_g": [
+      1.1709,
+      -0.7832,
+      0.0986
+    ],
+    "norm_raw": 11568.25,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.604017+08:00",
+    "monotonic": 9.289955333,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.604192+08:00",
+    "monotonic": 9.290104666,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.614908+08:00",
+    "monotonic": 9.300837,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.664112+08:00",
+    "monotonic": 9.350052666,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.664306+08:00",
+    "monotonic": 9.35021625,
+    "kind": "notify",
+    "hex": "a1 02 26 c3 27 83 26 c1 00 c2 01 00 00 00 00 e0",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.665719+08:00",
+    "monotonic": 9.351639291,
+    "kind": "notify",
+    "hex": "a1 03 26 f0 cf 24 1f 54 00 00 00 00 00 00 00 20",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.665771+08:00",
+    "monotonic": 9.351681125,
+    "kind": "accel",
+    "raw": [
+      9968,
+      -12508,
+      8020
+    ],
+    "nominal_g": [
+      1.2168,
+      -1.5269,
+      0.979
+    ],
+    "norm_raw": 17892.22,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.666097+08:00",
+    "monotonic": 9.352010041,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.666467+08:00",
+    "monotonic": 9.352382541,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.716571+08:00",
+    "monotonic": 9.402528791,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.818491+08:00",
+    "monotonic": 9.504455916,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:35.874206+08:00",
+    "monotonic": 9.560158416,
+    "kind": "notify",
+    "hex": "a1 01 00 bc 00 ab 00 70 00 3b 01 00 00 00 00 b5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.874465+08:00",
+    "monotonic": 9.560381708,
+    "kind": "notify",
+    "hex": "a1 02 26 ba 27 83 26 c1 00 c2 01 00 00 00 00 d7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.875827+08:00",
+    "monotonic": 9.561753541,
+    "kind": "notify",
+    "hex": "a1 03 18 dc ed 3c 08 50 00 00 00 00 00 00 00 19",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.875886+08:00",
+    "monotonic": 9.561795166,
+    "kind": "accel",
+    "raw": [
+      6364,
+      -4804,
+      2128
+    ],
+    "nominal_g": [
+      0.7769,
+      -0.5864,
+      0.2598
+    ],
+    "norm_raw": 8252.71,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.876107+08:00",
+    "monotonic": 9.562018375,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.876486+08:00",
+    "monotonic": 9.562399416,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.877169+08:00",
+    "monotonic": 9.563081416,
+    "kind": "notify",
+    "hex": "a1 01 00 bc 00 ab 00 70 00 3b 01 00 00 00 00 b5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.878061+08:00",
+    "monotonic": 9.563972166,
+    "kind": "notify",
+    "hex": "a1 02 26 ba 27 83 26 c1 00 c2 01 00 00 00 00 d7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.878488+08:00",
+    "monotonic": 9.564401166,
+    "kind": "notify",
+    "hex": "a1 03 18 dc ed 3c 08 50 00 00 00 00 00 00 00 19",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.878518+08:00",
+    "monotonic": 9.564426958,
+    "kind": "accel",
+    "raw": [
+      6364,
+      -4804,
+      2128
+    ],
+    "nominal_g": [
+      0.7769,
+      -0.5864,
+      0.2598
+    ],
+    "norm_raw": 8252.71,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.878958+08:00",
+    "monotonic": 9.564867583,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.904019+08:00",
+    "monotonic": 9.589965958,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:35.920461+08:00",
+    "monotonic": 9.60640125,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.022206+08:00",
+    "monotonic": 9.708160958,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.084194+08:00",
+    "monotonic": 9.770146041,
+    "kind": "notify",
+    "hex": "a1 01 00 bc 00 ab 00 70 00 3b 01 00 00 00 00 b5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.084490+08:00",
+    "monotonic": 9.770409791,
+    "kind": "notify",
+    "hex": "a1 02 26 b7 27 83 26 c1 00 c2 01 00 00 00 00 d4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.085855+08:00",
+    "monotonic": 9.771783583,
+    "kind": "notify",
+    "hex": "a1 03 18 78 ed 6c 07 a4 00 00 00 00 00 00 00 38",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.085934+08:00",
+    "monotonic": 9.771848583,
+    "kind": "accel",
+    "raw": [
+      6264,
+      -4756,
+      1956
+    ],
+    "nominal_g": [
+      0.7646,
+      -0.5806,
+      0.2388
+    ],
+    "norm_raw": 8104.52,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.086305+08:00",
+    "monotonic": 9.772226375,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.086640+08:00",
+    "monotonic": 9.772559708,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.087317+08:00",
+    "monotonic": 9.773241708,
+    "kind": "notify",
+    "hex": "a1 01 00 bc 00 ab 00 70 00 3b 01 00 00 00 00 b5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.088077+08:00",
+    "monotonic": 9.773992208,
+    "kind": "notify",
+    "hex": "a1 02 26 b7 27 83 26 c1 00 c2 01 00 00 00 00 d4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.088459+08:00",
+    "monotonic": 9.774369625,
+    "kind": "notify",
+    "hex": "a1 03 18 78 ed 6c 07 a4 00 00 00 00 00 00 00 38",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.088495+08:00",
+    "monotonic": 9.774404125,
+    "kind": "accel",
+    "raw": [
+      6264,
+      -4756,
+      1956
+    ],
+    "nominal_g": [
+      0.7646,
+      -0.5806,
+      0.2388
+    ],
+    "norm_raw": 8104.52,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.088952+08:00",
+    "monotonic": 9.774865208,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.113950+08:00",
+    "monotonic": 9.7998995,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.123696+08:00",
+    "monotonic": 9.809643791,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.225381+08:00",
+    "monotonic": 9.911297625,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.294006+08:00",
+    "monotonic": 9.979940875,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.294191+08:00",
+    "monotonic": 9.980105,
+    "kind": "notify",
+    "hex": "a1 02 26 b9 27 83 26 c1 00 c2 01 00 00 00 00 d6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.297025+08:00",
+    "monotonic": 9.982938333,
+    "kind": "notify",
+    "hex": "a1 03 18 d0 ed 78 07 70 00 00 00 00 00 00 00 68",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.297060+08:00",
+    "monotonic": 9.982968125,
+    "kind": "accel",
+    "raw": [
+      6352,
+      -4744,
+      1904
+    ],
+    "nominal_g": [
+      0.7754,
+      -0.5791,
+      0.2324
+    ],
+    "norm_raw": 8153.44,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.324173+08:00",
+    "monotonic": 10.010123583,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.324510+08:00",
+    "monotonic": 10.010438375,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.325816+08:00",
+    "monotonic": 10.011736458,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.325999+08:00",
+    "monotonic": 10.011915708,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.326556+08:00",
+    "monotonic": 10.012479958,
+    "kind": "notify",
+    "hex": "a1 02 26 b9 27 83 26 c1 00 c2 01 00 00 00 00 d6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.326991+08:00",
+    "monotonic": 10.012908333,
+    "kind": "notify",
+    "hex": "a1 03 18 d0 ed 78 07 70 00 00 00 00 00 00 00 68",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.327047+08:00",
+    "monotonic": 10.012960375,
+    "kind": "accel",
+    "raw": [
+      6352,
+      -4744,
+      1904
+    ],
+    "nominal_g": [
+      0.7754,
+      -0.5791,
+      0.2324
+    ],
+    "norm_raw": 8153.44,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.327359+08:00",
+    "monotonic": 10.013275625,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.328221+08:00",
+    "monotonic": 10.014145333,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.383921+08:00",
+    "monotonic": 10.069852,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.384084+08:00",
+    "monotonic": 10.06999675,
+    "kind": "notify",
+    "hex": "a1 02 26 b9 27 83 26 c1 00 c2 01 00 00 00 00 d6",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.385835+08:00",
+    "monotonic": 10.07177,
+    "kind": "notify",
+    "hex": "a1 03 18 44 ed f4 07 64 00 00 00 00 00 00 00 4c",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.385910+08:00",
+    "monotonic": 10.071818666,
+    "kind": "accel",
+    "raw": [
+      6212,
+      -4620,
+      1892
+    ],
+    "nominal_g": [
+      0.7583,
+      -0.564,
+      0.231
+    ],
+    "norm_raw": 7969.5,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.386149+08:00",
+    "monotonic": 10.072057958,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.386346+08:00",
+    "monotonic": 10.072254416,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.427619+08:00",
+    "monotonic": 10.113573666,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.529378+08:00",
+    "monotonic": 10.215324958,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.594227+08:00",
+    "monotonic": 10.280177125,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.594470+08:00",
+    "monotonic": 10.280383333,
+    "kind": "notify",
+    "hex": "a1 02 26 b6 27 83 26 c1 00 c2 01 00 00 00 00 d3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.595700+08:00",
+    "monotonic": 10.281613666,
+    "kind": "notify",
+    "hex": "a1 03 18 40 ed 18 07 b0 00 00 00 00 00 00 00 b8",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.595742+08:00",
+    "monotonic": 10.281650041,
+    "kind": "accel",
+    "raw": [
+      6208,
+      -4840,
+      1968
+    ],
+    "nominal_g": [
+      0.7578,
+      -0.5908,
+      0.2402
+    ],
+    "norm_raw": 8114.05,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.596224+08:00",
+    "monotonic": 10.282134666,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.596910+08:00",
+    "monotonic": 10.2828255,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.597260+08:00",
+    "monotonic": 10.283175125,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.598069+08:00",
+    "monotonic": 10.28397825,
+    "kind": "notify",
+    "hex": "a1 02 26 b6 27 83 26 c1 00 c2 01 00 00 00 00 d3",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.598480+08:00",
+    "monotonic": 10.28438925,
+    "kind": "notify",
+    "hex": "a1 03 18 40 ed 18 07 b0 00 00 00 00 00 00 00 b8",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.598507+08:00",
+    "monotonic": 10.284413958,
+    "kind": "accel",
+    "raw": [
+      6208,
+      -4840,
+      1968
+    ],
+    "nominal_g": [
+      0.7578,
+      -0.5908,
+      0.2402
+    ],
+    "norm_raw": 8114.05,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.598971+08:00",
+    "monotonic": 10.284884,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.624161+08:00",
+    "monotonic": 10.310113791,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.630727+08:00",
+    "monotonic": 10.316660125,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.732447+08:00",
+    "monotonic": 10.418403125,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.803902+08:00",
+    "monotonic": 10.489823125,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.804008+08:00",
+    "monotonic": 10.489913375,
+    "kind": "notify",
+    "hex": "a1 02 26 b7 27 83 26 c1 00 c2 01 00 00 00 00 d4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.805785+08:00",
+    "monotonic": 10.491690791,
+    "kind": "notify",
+    "hex": "a1 03 1f 54 e1 b8 10 28 00 00 00 00 00 00 00 e8",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.805809+08:00",
+    "monotonic": 10.491713583,
+    "kind": "accel",
+    "raw": [
+      8020,
+      -7752,
+      4136
+    ],
+    "nominal_g": [
+      0.979,
+      -0.9463,
+      0.5049
+    ],
+    "norm_raw": 11896.23,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.806190+08:00",
+    "monotonic": 10.492104458,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.806795+08:00",
+    "monotonic": 10.492704083,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.807308+08:00",
+    "monotonic": 10.493214875,
+    "kind": "notify",
+    "hex": "a1 01 00 bb 00 ab 00 70 00 3b 01 00 00 00 00 b4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.807844+08:00",
+    "monotonic": 10.493749333,
+    "kind": "notify",
+    "hex": "a1 02 26 b7 27 83 26 c1 00 c2 01 00 00 00 00 d4",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.808259+08:00",
+    "monotonic": 10.494164208,
+    "kind": "notify",
+    "hex": "a1 03 1f 54 e1 b8 10 28 00 00 00 00 00 00 00 e8",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.808276+08:00",
+    "monotonic": 10.494181166,
+    "kind": "accel",
+    "raw": [
+      8020,
+      -7752,
+      4136
+    ],
+    "nominal_g": [
+      0.979,
+      -0.9463,
+      0.5049
+    ],
+    "norm_raw": 11896.23,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.833557+08:00",
+    "monotonic": 10.519463583,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.833617+08:00",
+    "monotonic": 10.51952275,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:36.833962+08:00",
+    "monotonic": 10.519868958,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.893781+08:00",
+    "monotonic": 10.579708083,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 ab 00 70 00 3b 01 00 00 00 00 b2",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.893935+08:00",
+    "monotonic": 10.579847083,
+    "kind": "notify",
+    "hex": "a1 02 07 bf 27 83 26 c1 00 c2 01 00 00 00 00 bd",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.895525+08:00",
+    "monotonic": 10.581433708,
+    "kind": "notify",
+    "hex": "a1 03 10 94 db d0 15 b8 00 00 00 00 00 00 00 c0",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.895554+08:00",
+    "monotonic": 10.581460416,
+    "kind": "accel",
+    "raw": [
+      4244,
+      -9264,
+      5560
+    ],
+    "nominal_g": [
+      0.5181,
+      -1.1309,
+      0.6787
+    ],
+    "norm_raw": 11608.05,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.895842+08:00",
+    "monotonic": 10.581751416,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.896288+08:00",
+    "monotonic": 10.582199541,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:36.935027+08:00",
+    "monotonic": 10.62097,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:37.036785+08:00",
+    "monotonic": 10.722734166,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:37.104206+08:00",
+    "monotonic": 10.790169791,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 ab 00 70 00 3b 01 00 00 00 00 b2",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.104566+08:00",
+    "monotonic": 10.790493,
+    "kind": "notify",
+    "hex": "a1 02 26 c1 27 83 26 c1 00 c2 01 00 00 00 00 de",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.105846+08:00",
+    "monotonic": 10.791768583,
+    "kind": "notify",
+    "hex": "a1 03 f0 14 14 f8 ee e8 00 00 00 00 00 00 00 8a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.105922+08:00",
+    "monotonic": 10.791837291,
+    "kind": "accel",
+    "raw": [
+      -4076,
+      5368,
+      -4376
+    ],
+    "nominal_g": [
+      -0.4976,
+      0.6553,
+      -0.5342
+    ],
+    "norm_raw": 8036.08,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.106247+08:00",
+    "monotonic": 10.792171166,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.106594+08:00",
+    "monotonic": 10.792511083,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.107358+08:00",
+    "monotonic": 10.793281125,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 ab 00 70 00 3b 01 00 00 00 00 b2",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.108193+08:00",
+    "monotonic": 10.794115125,
+    "kind": "notify",
+    "hex": "a1 02 26 c1 27 83 26 c1 00 c2 01 00 00 00 00 de",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.108579+08:00",
+    "monotonic": 10.794510125,
+    "kind": "notify",
+    "hex": "a1 03 f0 14 14 f8 ee e8 00 00 00 00 00 00 00 8a",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.108644+08:00",
+    "monotonic": 10.794560875,
+    "kind": "accel",
+    "raw": [
+      -4076,
+      5368,
+      -4376
+    ],
+    "nominal_g": [
+      -0.4976,
+      0.6553,
+      -0.5342
+    ],
+    "norm_raw": 8036.08,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.109098+08:00",
+    "monotonic": 10.795012875,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.134026+08:00",
+    "monotonic": 10.819972583,
+    "kind": "notify",
+    "hex": "a1 05 01 45 00 00 00 00 00 00 01 00 00 00 00 ed",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.137834+08:00",
+    "monotonic": 10.823772125,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:37.239592+08:00",
+    "monotonic": 10.925552916,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:37.314172+08:00",
+    "monotonic": 11.000121541,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 ab 00 70 00 3b 01 00 00 00 00 b2",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.314501+08:00",
+    "monotonic": 11.000430208,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 27 83 26 c1 00 c2 01 00 00 00 00 e7",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.316118+08:00",
+    "monotonic": 11.002046,
+    "kind": "notify",
+    "hex": "a1 03 e8 1c 10 50 f6 40 00 00 00 00 00 00 00 3e",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.316189+08:00",
+    "monotonic": 11.002103541,
+    "kind": "accel",
+    "raw": [
+      -6116,
+      4176,
+      -2496
+    ],
+    "nominal_g": [
+      -0.7466,
+      0.5098,
+      -0.3047
+    ],
+    "norm_raw": 7815.01,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.316564+08:00",
+    "monotonic": 11.002514875,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.316925+08:00",
+    "monotonic": 11.002850833,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.317257+08:00",
+    "monotonic": 11.003177458,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 ab 00 70 00 3b 01 00 00 00 00 b2",
+    "valid": true,
+    "phase": "continuous"
+  },
+  {
+    "time": "2026-10-09T18:05:37.341365+08:00",
+    "monotonic": 11.027309541,
+    "kind": "send",
+    "hex": "a1 03 00 00 00 00 00 00 00 00 00 00 00 00 00 a4"
+  },
+  {
+    "time": "2026-10-09T18:05:37.341867+08:00",
+    "monotonic": 11.027790708,
+    "kind": "send",
+    "hex": "a1 00 00 00 00 00 00 00 00 00 00 00 00 00 00 a1"
+  },
+  {
+    "time": "2026-10-09T18:05:37.344141+08:00",
+    "monotonic": 11.030059833,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 27 83 26 c1 00 c2 01 00 00 00 00 e7",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.344614+08:00",
+    "monotonic": 11.030523541,
+    "kind": "notify",
+    "hex": "a1 03 e8 1c 10 50 f6 40 00 00 00 00 00 00 00 3e",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.344647+08:00",
+    "monotonic": 11.030554083,
+    "kind": "accel",
+    "raw": [
+      -6116,
+      4176,
+      -2496
+    ],
+    "nominal_g": [
+      -0.7466,
+      0.5098,
+      -0.3047
+    ],
+    "norm_raw": 7815.01,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.347730+08:00",
+    "monotonic": 11.033646625,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.347983+08:00",
+    "monotonic": 11.03389275,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.373694+08:00",
+    "monotonic": 11.059634458,
+    "kind": "notify",
+    "hex": "a1 01 00 b9 00 ab 00 70 00 3b 01 00 00 00 00 b2",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.374756+08:00",
+    "monotonic": 11.060681208,
+    "kind": "notify",
+    "hex": "a1 02 26 ca 27 83 26 c1 00 c2 01 00 00 00 00 e7",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.375160+08:00",
+    "monotonic": 11.061074125,
+    "kind": "notify",
+    "hex": "a1 03 e5 0c 0f f0 f6 28 00 00 00 00 00 00 00 b2",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.375204+08:00",
+    "monotonic": 11.061112458,
+    "kind": "accel",
+    "raw": [
+      -6900,
+      4080,
+      -2520
+    ],
+    "nominal_g": [
+      -0.8423,
+      0.498,
+      -0.3076
+    ],
+    "norm_raw": 8402.79,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.377304+08:00",
+    "monotonic": 11.063223958,
+    "kind": "notify",
+    "hex": "a1 04 00 00 00 00 00 00 00 00 00 00 00 00 00 a5",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.377517+08:00",
+    "monotonic": 11.063426541,
+    "kind": "notify",
+    "hex": "a1 05 01 46 00 00 00 00 00 00 01 00 00 00 00 ee",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.404056+08:00",
+    "monotonic": 11.09001575,
+    "kind": "notify",
+    "hex": "a1 ff 00 00 00 00 00 00 00 00 00 00 00 00 00 a0",
+    "valid": true,
+    "phase": "stopping"
+  },
+  {
+    "time": "2026-10-09T18:05:37.404365+08:00",
+    "monotonic": 11.090284125,
+    "kind": "stop_ack",
+    "received": true
+  },
+  {
+    "time": "2026-10-09T18:05:39.406164+08:00",
+    "monotonic": 13.092130541,
+    "kind": "stop_check",
+    "extra_accel": 0
+  },
+  {
+    "time": "2026-10-09T18:05:39.409440+08:00",
+    "monotonic": 13.095374833,
+    "kind": "summary",
+    "samples": 83,
+    "effective_hz": 10.35277229408754,
+    "interval_median_s": 0.05963629149999994,
+    "interval_max_s": 0.24037108300000032,
+    "raw_ranges": [
+      [
+        -7948,
+        9968
+      ],
+      [
+        -12508,
+        5600
+      ],
+      [
+        -12996,
+        13216
+      ]
+    ],
+    "channels": {
+      "01": 89,
+      "02": 89,
+      "03": 89,
+      "04": 89,
+      "05": 89,
+      "ff": 1
+    }
+  }
+]
