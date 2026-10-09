@@ -42,6 +42,32 @@ def basis(neutral):
     up=(g[1]*right[2]-g[2]*right[1],g[2]*right[0]-g[0]*right[2],g[0]*right[1]-g[1]*right[0])
     return g,right,up
 
+def profile_axes(profile):
+    if profile.get('version')!=1:
+        raise ValueError('不支援的校正版本')
+    poses=profile.get('poses')
+    if not isinstance(poses,list) or len(poses)!=3:
+        raise ValueError('需要中立、向右、向上三個姿勢')
+    for pose in poses:
+        if not isinstance(pose,list) or len(pose)!=3 or any(not isinstance(x,(int,float)) or not math.isfinite(x) for x in pose):
+            raise ValueError('姿勢資料無效')
+        if not .9<=math.sqrt(sum(x*x for x in pose))<=1.1:
+            raise ValueError('姿勢向量無效')
+    n=unit(tuple(x*8192 for x in poses[0]))
+    tangents=[]
+    for pose in poses[1:]:
+        g=unit(tuple(x*8192 for x in pose))
+        d=dot(g,n)
+        if d>math.cos(math.radians(8)) or d<.5:
+            raise ValueError('請使用約 10–60 度的傾斜姿勢')
+        tangents.append(unit(tuple((x-d*n[i])*8192 for i,x in enumerate(g))))
+    r,u=tangents
+    c=dot(r,u)
+    den=1-c*c
+    if den<.2:
+        raise ValueError('向右與向上姿勢太接近')
+    return n,tuple((r[i]-c*u[i])/den for i in range(3)),tuple((u[i]-c*r[i])/den for i in range(3))
+
 def speed(angle,limit):
     dead=math.radians(8)
     amount=max(0,min(1,(abs(angle)-dead)/math.radians(27)))
@@ -96,7 +122,16 @@ async def run(args):
         records.append(row)
         if kind not in ('accel','notify'):
             print(json.dumps(row,ensure_ascii=False),flush=True)
-    controller=Controller(args.speed,args.invert_x,args.invert_y)
+    saved=None
+    path=Path(__file__).parent/'calibration.json'
+    if path.exists() and not args.ignore_calibration:
+        saved=json.loads(path.read_text())
+        if saved.get('name')!=args.name:
+            raise ValueError('校正檔的戒指名稱不符')
+        axes=profile_axes(saved)
+        log('saved_calibration_loaded',speed=saved['speed'])
+    controller=Controller(args.speed or (saved['speed'] if saved else 220),args.invert_x,args.invert_y)
+    if saved: controller.axes=axes
     stop=asyncio.Event()
     loop=asyncio.get_running_loop()
     for sig in (signal.SIGINT,signal.SIGTERM):
@@ -166,7 +201,7 @@ async def run(args):
                 await asyncio.sleep(.5)
                 if await command(0x3b,b'\x02\x00\x09\x01') is None:
                     raise RuntimeError('Gesture reporting not acknowledged')
-                log('hold_still',seconds=3)
+                if not saved: log('hold_still',seconds=3)
                 async def poll():
                     while not stop.is_set():
                         sample_event.clear()
@@ -242,9 +277,10 @@ if __name__=='__main__':
     parser.add_argument('--dry-run',action='store_true')
     parser.add_argument('--click',action='store_true')
     parser.add_argument('--seconds',type=float,default=60)
-    parser.add_argument('--speed',type=float,default=220)
+    parser.add_argument('--speed',type=float,default=None)
+    parser.add_argument('--ignore-calibration',action='store_true')
     parser.add_argument('--invert-x',action='store_true')
     parser.add_argument('--invert-y',action='store_true')
     args=parser.parse_args()
-    if not 1<=args.speed<=600 or not 1<=args.seconds<=3600: parser.error('Invalid speed or duration')
+    if (args.speed is not None and not 1<=args.speed<=600) or not 1<=args.seconds<=3600: parser.error('Invalid speed or duration')
     raise SystemExit(asyncio.run(run(args)))
