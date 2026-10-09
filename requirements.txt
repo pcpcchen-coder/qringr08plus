@@ -4,3 +4,4 @@ pyobjc-framework-Cocoa==11.1
 pyobjc-framework-CoreBluetooth==11.1
 pyobjc-framework-libdispatch==11.1
 pyobjc-framework-Quartz==11.1
+aiohttp==3.13.5
