@@ -1,5 +1,7 @@
 # QRing R08 Plus / AIRingAgent
 
+**換機接手：[M6 Mac 安裝、資料搬移與開發指南](docs/M6-HANDOFF.md)**
+
 ## QRing Studio 0.2.0 Mac App
 
 可安裝的 Apple Silicon Mac App 已完成：勾選式滑鼠控制、五步方向校正、裝置電量與版本、按需心率／血氧量測、能力探索與完整本機收發紀錄。
