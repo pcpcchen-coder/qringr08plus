@@ -1,5 +1,7 @@
 # QRing Studio 0.2.0
 
+**換機接手：[M6 Mac 安裝、資料搬移與開發指南](../docs/M6-HANDOFF.md)**
+
 macOS 戒指開發 App，整合 QRing R08 五步校正、按需感測、游標控制與原始訊息記錄。只在 R08_E703 / RT08_V3.1 / RT08_3.10.48_260309 與 Apple Silicon MacBook Air、macOS 27.0.1 實機驗證。
 
 ## 安裝與使用
