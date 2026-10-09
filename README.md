@@ -1,6 +1,6 @@
 # QRing R08 Plus / AIRingAgent
 
-將 QRing R08 的加速度與觸控事件轉成 Mac 輸入。目前有可執行的傾斜滑鼠原型；真實系統游標移動仍待取得輔助使用權限後實測。
+將 QRing R08 的加速度與觸控事件轉成 Mac 輸入。目前有傾斜滑鼠原型，使用者已確認游標能移動；原本方向不符合直覺，因此新增三姿勢校正網頁。
 
 ## 已驗證
 
@@ -13,6 +13,20 @@
 - 中立死區、速度限制、資料逾時與暫停邏輯檢查。
 
 詳細紀錄在 [docs](docs)，原始資料在 [logs](logs)。
+
+## 校正網頁
+
+```sh
+.venv/bin/python calibration_server.py
+```
+
+在這台 Mac 的瀏覽器開啟 http://127.0.0.1:8765，按「連接戒指」，依序記錄中立、向右、向上姿勢。每個姿勢保持約 3 秒，再用頁面內的游標確認方向與速度，按「儲存校正」。設定保存在本機 calibration.json，後續 ring_mouse.py 自動使用；不要把個人校正檔提交到 GitHub。
+
+完成校正後先按「中斷連線」，再啟動戒指滑鼠，避免兩個程式同時使用戒指。
+
+網頁版本不控制系統游標，也不會自動啟用點擊。Start Calibration.command 提供本機啟動入口。
+
+[私人線上入口](https://qring-direction-calibration.george-chen-1104.chatgpt.site)只提供介面與本機入口；實際感測與設定留在 Mac。沒有本機服務時不能進行實機校正。
 
 ## 安裝
 
@@ -42,7 +56,7 @@ python3 -m venv .venv
 .venv/bin/python ring_mouse.py --seconds 60
 ```
 
-1. 保持戒指戴在手上、手指靜止 3 秒，直到 calibrated / ready。
+1. 保持戒指戴在手上、手指靜止 3 秒，直到 calibrated / ready；若已有網頁校正檔，程式直接使用已儲存姿勢。
 2. 啟動時暫停；長按約 3 秒啟用／暫停移動。
 3. 向兩個方向緩慢傾斜。實際方向受配戴方向影響；如需反轉，使用 --invert-x 或 --invert-y。
 4. Control-C 結束，或 60 秒自動結束，程式會嘗試還原設定。
@@ -59,7 +73,7 @@ python3 -m venv .venv
 - 游標限制在主螢幕；多螢幕尚未支援。
 - 每次啟動需校正，不自動登入執行。
 - 斷線／輪詢失敗會結束，不自動恢復控制。
-- 輔助使用權限不足會退出；實際游標、點擊與長時間手感尚待驗證。
+- 輔助使用權限不足會退出；已觀測游標移動；點擊與長時間手感尚待驗證。
 - 某些測試中停止 ACK 後仍有資料；程式結束會送停止指令並還原觸控設定，不宣稱所有韌體均立即停止串流。意外強制終止時，還原可能無法完成。
 
 原始 BLE 記錄會保存在本機 logs。社群協定依據：[Halo-Ring](https://github.com/MRziyi/Halo-Ring/blob/main/Doc/09-r08-ble-protocol-spec.md)。
