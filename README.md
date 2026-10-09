@@ -1,5 +1,15 @@
 # QRing R08 Plus / AIRingAgent
 
+## QRing Studio 0.2.0 Mac App
+
+可安裝的 Apple Silicon Mac App 已完成：勾選式滑鼠控制、五步方向校正、裝置電量與版本、按需心率／血氧量測、能力探索與完整本機收發紀錄。
+
+[App 安裝與開發文件](mac-app/README.md) · [實機驗證與限制](docs/2026-10-09-qring-studio-app.md)
+
+所有 App 持續量測預設關閉；未確認的協定功能標示為候選。戒指內建心率排程的停止尚未確認，詳見文件。健康數值與個人校正檔不提交至此公開 Repo。
+
+本次安裝包由聊天附件／本機交付；本 Repo 提供完整原始碼與 build_app.py，不假裝已有 GitHub Release 二進位下載。
+
 將 QRing R08 的加速度與觸控事件轉成 Mac 輸入。目前有傾斜滑鼠原型，使用者已確認游標能移動；原本方向不符合直覺，因此新增五姿勢校正網頁。
 
 ## 已驗證
