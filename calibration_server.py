@@ -116,7 +116,7 @@ async def save(request):
         if data.get('name')!='R08_E703': raise ValueError('戒指名稱不符')
         speed=float(data['speed'])
         if not math.isfinite(speed) or not 60<=speed<=500: raise ValueError('速度超出範圍')
-        clean={'version':1,'name':'R08_E703','poses':data['poses'],'speed':speed}
+        clean={'version':data['version'],'name':'R08_E703','poses':data['poses'],'speed':speed}
         temporary=PROFILE.with_suffix('.tmp')
         temporary.write_text(json.dumps(clean,indent=2));os.replace(temporary,PROFILE)
         return web.json_response({'ok':True})
