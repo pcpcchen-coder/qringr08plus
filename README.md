@@ -2,6 +2,12 @@
 
 **換機接手：[M6 Mac 安裝、資料搬移與開發指南](docs/M6-HANDOFF.md)**
 
+## 貼身 AI 助理規劃
+
+[眼鏡 × Apple Watch × 戒指 × iPhone：獨立應用藍圖](docs/wearable-ai/README.md)
+
+包含裝置分工、九種應用構想、三個優先原型、AI 互動與工作記憶、分階段驗證及官方來源。此部分為產品規劃，尚未完成四裝置整合。
+
 ## QRing Studio 0.2.0 Mac App
 
 可安裝的 Apple Silicon Mac App 已完成：勾選式滑鼠控制、五步方向校正、裝置電量與版本、按需心率／血氧量測、能力探索與完整本機收發紀錄。
