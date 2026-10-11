@@ -1,0 +1,40 @@
+# QRing Hand：用戒指控制機器手掌
+
+日期：2026-10-11（Asia/Taipei）。這顆戒指（R08_E703 / RT08_V3.1 / RT08_3.10.48_260309）多了一種用途：握拳時，接在 Raspberry Pi 上的 Amazing Hand 右手跟著握拳。
+
+## 程式在哪裡
+
+程式不放在這個 Repo。它是「控制那隻手的方法之一」，和手放在一起：
+
+- Repo：[pcpcchen-coder/this-is-yourX](https://github.com/pcpcchen-coder/this-is-yourX)
+- 資料夾：`right_hand/control_methods/qring_fist/`（macOS App「QRing Hand」）
+- 決策與現況：該 Repo 的 ADR-0008 與 [PR #6](https://github.com/pcpcchen-coder/this-is-yourX/pull/6)；合併前，程式在分支 `claude/adr-0008-qring-fist-control`。
+
+這個 Repo 仍然是戒指本身的資料：協定實測、QRing Studio、查詢紀錄。
+
+## 從這個 Repo 沿用的部分
+
+QRing Hand 的戒指連線（`ring.py`）是照 `mac-app/` 已在這顆戒指上驗證過的做法寫的，兩邊各自維護：
+
+- 通道與封包：寫入 6e400002、通知 6e400003；16 bytes，最後一個 byte 是前 15 個的加總 mod 256。
+- 三軸：送 `A1 03` 要求一筆快照，回報的 bytes 2..7 是三個 big-endian signed int16；結束時送 `A1 00`。見[加速度實測](2026-10-09-accelerometer-verified.md)。
+- 觸控：先讀回 `3B` 的原設定，啟用回報，結束時還原並讀回比對；事件是 `73 2D`（3 單擊、4 長按）。見[觸控實測](2026-10-09-touch-events-verified.md)。
+- 電量：`03`。
+- 找戒指：先取已連線的 peripheral，找不到再依名稱掃描。
+
+QRing Hand 不啟動任何光學量測，也不改戒指的內建排程。它只用到重力方向：校正記下「張開」「握拳」兩個讀值，中間換算成握拳程度。
+
+## 和 QRing Studio 的關係
+
+- 兩個 App 不要同時連同一顆戒指。QRing Hand 連線前會問本機的 QRing Studio（127.0.0.1:18765 的 `api/control-status`）是否連著戒指，是的話拒絕連線。QRing Studio 這一側沒有改，不會反過來檢查。
+- QRing Hand 是另一個 App（bundle id `com.pcpcchen.qringhand`，本機服務 127.0.0.1:18775，資料在 `~/Library/Application Support/QRing Hand/`），不需要「裝置控制和資料取用」權限，需要藍牙與區域網路權限。
+
+## 這次在戒指上看到的事
+
+2026-10-11 在 M6 上用這顆戒指實際操作了兩段，各約一分鐘。屬於使用時的觀察，不是正式量測：
+
+- **三軸更新率約 4 Hz**（QRing Hand 畫面上的數字）。它的輪詢是「送一次 `A1 03`、等到回報再送下一次，再停 0.06 秒」。[加速度實測](2026-10-09-accelerometer-verified.md)用固定每約 0.1 秒送一次要求、不等回報，量到約 10 Hz。兩種送法的差別還沒有在同一個程式裡對照過；`mac-app/device.py` 的輪詢也是等回報再送（之後再停 0.15 秒），它在實機上的更新率沒有另外記錄。
+- 連線、硬體與韌體版本讀取、電量、觸控回報的啟用都正常；連線當時畫面上的電量是 100%。
+- 觸控設定的還原沒有另外確認。QRing Hand 0.1.0 在結束時若剛好有取樣進來，收尾會卡住而跳過還原；這已在它的 0.1.1 修掉，但 M6 上裝的還是 0.1.0。若發現戒指的觸控行為和原本不同，這是可能的原因。
+
+個人校正與健康數值沒有放進任何一個 Repo。
