@@ -1,6 +1,7 @@
 import argparse
 import asyncio
 import json
+import hashlib
 import math
 import os
 import secrets
@@ -22,6 +23,7 @@ async def create_app(folder,port):
     app=web.Application(middlewares=[guard],client_max_size=32768)
     app['engine']=engine
     async def state(req):return web.json_response(engine.snapshot())
+    async def control_status(req):return web.json_response(engine.control_snapshot(),headers={'Cache-Control':'no-store'})
     async def connect(req):await engine.connect();return web.json_response({'ok':True})
     async def disconnect(req):await engine.disconnect();return web.json_response({'ok':True,'message':engine.state['message']})
     async def options(req):await engine.set_options(await req.json());return web.json_response({'ok':True})
@@ -29,6 +31,8 @@ async def create_app(folder,port):
         data=await req.json();return web.json_response(await engine.read_feature(data['feature']))
     async def pause(req):
         engine.control.paused=True;engine.control.velocity=(0.,0.);engine.log('系統',message='手動暫停滑鼠');return web.json_response({'ok':True})
+    async def resume(req):
+        engine.resume_mouse();return web.json_response({'ok':True})
     async def request_access(req):
         allowed=Q.CGRequestPostEventAccess()
         return web.json_response({'ok':True,'allowed':bool(allowed)})
@@ -47,6 +51,7 @@ async def create_app(folder,port):
         data=await req.json();profile_axes(data);speed=float(data['speed'])
         if data.get('name')!=engine.state['name'] or not math.isfinite(speed) or not 60<=speed<=500:raise ValueError('校正名稱或速度無效')
         clean={k:data[k] for k in ('version','name','poses','speed')};p=engine.profile_path.with_suffix('.tmp');p.write_text(json.dumps(clean,indent=2));os.replace(p,engine.profile_path)
+        engine.control.load_profile(clean)
         engine.log('校正',message='校正設定已儲存');return web.json_response({'ok':True})
     async def ws(req):
         sock=web.WebSocketResponse(heartbeat=20);await sock.prepare(req);engine.peers.add(sock)
@@ -61,11 +66,18 @@ async def create_app(folder,port):
     async def shutdown(req):
         await engine.disconnect();app['shutdown'].set();return web.json_response({'ok':True})
     app['shutdown']=asyncio.Event()
-    for path,handler in [('/api/state',state),('/api/profile',profile),('/api/export',export),('/ws',ws)]:app.router.add_get(path,handler)
-    for path,handler in [('/api/connect',connect),('/api/disconnect',disconnect),('/api/options',options),('/api/read',read),('/api/pause',pause),('/api/measure',measure),('/api/save',save),('/api/request-access',request_access),('/api/shutdown',shutdown)]:app.router.add_post(path,handler)
+    for path,handler in [('/api/state',state),('/api/control-status',control_status),('/api/profile',profile),('/api/export',export),('/ws',ws)]:app.router.add_get(path,handler)
+    for path,handler in [('/api/connect',connect),('/api/disconnect',disconnect),('/api/options',options),('/api/read',read),('/api/pause',pause),('/api/resume',resume),('/api/measure',measure),('/api/save',save),('/api/request-access',request_access),('/api/shutdown',shutdown)]:app.router.add_post(path,handler)
     root=Path(__file__).parent/'web'
-    async def index(req):return web.FileResponse(root/'index.html',headers={'Cache-Control':'no-store'})
-    app.router.add_get('/',index);app.router.add_static('/',root)
+    asset_version=hashlib.sha256((root/'studio.js').read_bytes()+(root/'studio.css').read_bytes()).hexdigest()[:12]
+    page=(root/'index.html').read_text().replace('href="studio.css"',f'href="studio.css?v={asset_version}"').replace('src="studio.js"',f'src="studio.js?v={asset_version}"')
+    async def index(req):return web.Response(text=page,content_type='text/html',headers={'Cache-Control':'no-store'})
+    calibration_assets=('calibration.js','calibration-flow.js','ring-motion.js','calibration.css')
+    calibration_version=hashlib.sha256(b''.join((root/name).read_bytes() for name in calibration_assets)).hexdigest()[:12]
+    calibration_page=(root/'calibration.html').read_text()
+    for name in calibration_assets:calibration_page=calibration_page.replace(f'"{name}"',f'"{name}?v={calibration_version}"')
+    async def calibration_index(req):return web.Response(text=calibration_page,content_type='text/html',headers={'Cache-Control':'no-store'})
+    app.router.add_get('/',index);app.router.add_get('/calibration.html',calibration_index);app.router.add_static('/',root)
     async def cleanup(app):
         for t in tasks:t.cancel()
         await asyncio.gather(*tasks,return_exceptions=True)

@@ -1,19 +1,19 @@
-# M6 Mac 接手指南：QRing Studio 0.2.0
+# M6 Mac 接手指南：QRing Studio 0.3.0
 
-日期：2026-10-09（Asia/Taipei）。「M6」指使用者要接手的目標機器；尚未連到該機確認 CPU、macOS、工具版本，不以機器名稱推定硬體規格。
+更新日期：2026-10-11（Asia/Taipei）。已完成 M6 原始碼接手、開發環境、原生介面、戒指連線、加速度取樣與既有權限排查。歷程見 [M6 本機紀錄](2026-10-09-m6-setup.md)，最新功能與驗證見 [0.3.0 進度](2026-10-11-studio-0.3.0-progress.md)。
 
 ## 接手狀態
 
-- 原始碼完整保存在此 Repo 的 mac-app/，包含原生容器、BLE 引擎、UI、五步校正、能力目錄、打包腳本與測試。
-- 已在原 MacBook Air／macOS 27.0.1 驗證。App 為 arm64，只供 Apple Silicon；尚未在目標 M6 機器驗證。
-- 10 項 unit/API 測試、封裝後 native self-test、bundle 簽章驗證與 DMG 檢查通過。
-- 原生 GUI、自身藍牙與游標控制授權仍待首次操作驗證，不可宣稱已全部通過。
-- 心率／血氧得到非零裝置回報；醫療準確度未驗證。其他健康候選的短測多為進度／未解碼值，詳見 [驗證紀錄](2026-10-09-qring-studio-app.md)。
-- 內建心率排程的關閉 ACK 後讀回未改變。只能保證 App 不主動啟動未勾選的項目，不能保證戒指內部所有感測都停止。
+- 最新 App 原始碼、UI、BLE 引擎、校正流程、建置腳本與測試完整收錄在 `mac-app/`。
+- 已整合選單列、戒指單擊校正、觸控／健康候選回饋、可儲存的防重複與方向範圍、資料間隙續移。
+- 合計 43 項合成測試，封裝啟動及簽章檢查；實際驗證日期與範圍見進度文件。
+- M6 實機曾驗證連線、加速度、原生設定介面與權限恢復；完整方向手感、誤觸率、長期穩定性與耗電尚待測試。
+- 健康有效回報與醫療準確度分開；未知候選只顯示原始讀值。充電自動暫停與配戴偵測尚未實作。
+- 內建心率排程的關閉 ACK 後讀回未改變，只能保證 App 不主動啟動未勾選項目。
 
 ## 先帶走哪些東西
 
-1. **安裝包**：QRing-Studio-0.2.0-arm64.dmg。
+1. **安裝包**：0.3.0 請從最新原始碼建置，見 [建置產物說明](../releases/README.md)。尚無 GitHub Release 二進位下載。以下 QRing-Studio-0.2.0-arm64.dmg 為早期交付的歷史包，不能當作新版。
    原機位置：~/Projects/AIRingAgent/releases/。
    安裝包沒有上傳 GitHub Release，單純 clone Repo 不會取得二進位 App。
    SHA-256：
@@ -26,12 +26,12 @@
 4. **私人紀錄（選用）**：同資料夾的 session-*.jsonl，可能包含健康資訊。只以私人方式搬移，不提交公開 Repo。
 5. 不搬移 .venv、不沿用原機的 BLE UUID、不搬移或修改 macOS 權限資料庫。
 
-本次 DMG 不包含個人校正與健康紀錄。原機 ~/Applications/QRing Studio.app 是已安裝 App，必要時亦可私人複製，但優先使用 DMG。
+安裝包不應包含個人校正與健康紀錄。原機 ~/Applications/QRing Studio.app 是已安裝 App，必要時亦可私人複製，但優先使用 DMG。
 
 ## 在目標 Mac 安裝與驗收
 
 1. 確認為 Apple Silicon。若是 Intel，這個安裝包不可使用。
-2. 開啟 DMG，將 QRing Studio 拖入 Applications。
+2. 將最新建置的 QRing Studio.app 複製到 Applications；若使用早期 DMG，要先確認其版本。
 3. 本版為 ad-hoc 簽章、未經 Apple 公證。若系統拒絕開啟，保留完整提示交給接手 Agent 判讀；不要透過關閉系統防護或刪除權限資料庫處理。
 4. 關閉原 Mac 的戒指 App／舊腳本，讓手機 QRing 斷線。避免兩台 Mac 同時連線。
 5. 在新機開啟 App，允許藍牙；按「連接戒指」，核對名稱、硬體、韌體、電量。
@@ -41,7 +41,7 @@
 9. 分別單次測試心率與血氧；未勾選項目不得持續排程。
 10. 確認收發紀錄可檢索與匯出，關閉 App 能停止服務與嘗試還原設定。
 
-如果新機找不到戒指，不直接套用早期文件的原機 UUID。当前 App 會按 R08_E703 名稱搜尋，或取得已連線的 HID peripheral。
+如果新機找不到戒指，不直接套用早期文件的原機 UUID。目前 App 會按 R08_E703 名稱搜尋，或取得已連線的 HID peripheral。
 
 ## 在目標 Mac 繼續開發
 
@@ -60,18 +60,18 @@ xcode-select -p
 
 ### 打包前必須核對
 
-目前 mac-app/build_app.py **固定**使用：
+目前 mac-app/build_app.py 使用：
 
-- /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework
+- 執行中 Python 的 Apple Python3.framework（支援 Xcode 或 Command Line Tools 位置）。
 - 其中 Versions/3.9/bin/python3.9。
-- Repo 根目錄 .venv/lib/python3.9/site-packages。
+- 執行中 venv 的 site-packages；請使用 Repo 根目錄的 .venv。
 - swiftc、codesign。
 - arm64-apple-macosx13.0 編譯目標。
 
 不要假設新機的 /usr/bin/python3 仍是 3.9。先檢查：
 
 ```sh
-ls -l /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9
+/usr/bin/python3 -c 'import sys; print(sys.version); print(sys.base_prefix)'
 command -v swiftc
 command -v codesign
 ```
@@ -81,16 +81,17 @@ command -v codesign
 若指定的 framework 存在，從 Repo 根目錄：
 
 ```sh
-/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9 -m venv .venv
+/usr/bin/python3 -m venv .venv
 .venv/bin/python -m pip install --upgrade pip
 .venv/bin/python -m pip install -r requirements.txt
 cd mac-app
 ../.venv/bin/python -m unittest -v test_studio.py
+node --test test_calibration.cjs
 ../.venv/bin/python build_app.py
-../releases/'QRing Studio.app'/Contents/MacOS/QRingStudio --self-test
+../releases/.build.noindex/'QRing Studio.app'/Contents/MacOS/QRingStudio --self-test
 ```
 
-build_app.py 會重建 Repo 的 releases/QRing Studio.app；不要在這個生成物內手改檔案。實際修改 mac-app/ 原始碼再重新打包。個人資料保存在 Application Support，與生成物分開。
+build_app.py 會重建 Repo 的 releases/.build.noindex/QRing Studio.app；不要在這個生成物內手改檔案。實際修改 mac-app/ 原始碼再重新打包。個人資料保存在 Application Support，與生成物分開。建置產物不放在一般可索引資料夾，舊版另以 ZIP 備份，以免啟動區出現多個同名項目。
 
 ## 程式與資源位置
 
@@ -99,11 +100,12 @@ build_app.py 會重建 Repo 的 releases/QRing Studio.app；不要在這個生�
 | mac-app/native/Studio.swift | AppKit / WKWebView 容器、內建服務啟動、原生匯出、結束時清理 |
 | mac-app/server.py | 本機 API、校正儲存、來源檢查與匯出 |
 | mac-app/device.py | 唯一 BLE 連線、按需排程、停止／還原、封包解析、游標輸出 |
-| mac-app/ring_mouse.py | 四方向映射、死區、平滑、速度上限、逾時停住 |
+| mac-app/ring_mouse.py | 四方向映射、可調範圍、中立停止區、平滑、資料間隙續移 |
 | mac-app/web/ | App 主介面與五步校正 |
 | mac-app/catalog.json | 社群協定入口，不能當作實機支援清單 |
 | mac-app/verified-device.json | 綁定本戒指與韌體的既有實測，不含個人健康數值 |
-| mac-app/test_studio.py | 10 項合成 unit/API 測試 |
+| mac-app/test_studio.py | 31 項合成 unit/API 測試 |
+| mac-app/test_calibration.cjs | 12 項 JavaScript 校正與移動規則測試 |
 | mac-app/build_app.py | 內建 runtime 打包與 ad-hoc 簽章 |
 | requirements.txt | 版本固定的相依套件 |
 
@@ -113,7 +115,7 @@ App 服務：127.0.0.1:18765；self-test：18767。早期網頁校正服務：87
 
 1. 讀本指南、[App README](../mac-app/README.md)與實機驗證紀錄。
 2. 查新機環境與目前 Repo 版本，保留使用者未提交的工作。
-3. 先驗證已封裝 App，補上原生 UI 與新機授權／四方向操作結果。
+3. 先執行測試與封裝啟動檢查；實機操作另核對授權、連線、四方向、中立停止及長按暫停。
 4. 若要重建，先解決 Python runtime 的可移植性。
 5. 維持所有持續量測與滑鼠預設關閉；斷線不得自動重啟游標控制。
 6. 保留「實機回報／有效值／準確度」的區分，不把候選功能宣稱為可靠健康量測。

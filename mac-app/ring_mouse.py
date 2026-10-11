@@ -76,8 +76,8 @@ def profile_axes(profile):
         raise ValueError('向右與向上姿勢太接近')
     return n,tuple((r[i]-c*u[i])/den for i in range(3)),tuple((u[i]-c*r[i])/den for i in range(3))
 
-def speed(angle,limit):
-    dead=math.radians(8)
+def speed(angle,limit,dead_degrees=8):
+    dead=math.radians(dead_degrees)
     amount=max(0,min(1,(abs(angle)-dead)/math.radians(27)))
     return math.copysign(limit*amount*amount,angle)
 
@@ -90,6 +90,19 @@ class Controller:
         self.velocity=(0.,0.)
         self.last=0.
         self.paused=True
+        self.hold_between_samples=False
+        self.neutral_zone=8
+        self.direction_ranges={}
+        self.poses=[]
+        self.direction='waiting'
+        self.deviations={}
+        self.tilt=None
+    def load_profile(self,profile):
+        self.axes=profile_axes(profile)
+        self.poses=[unit(tuple(x*8192 for x in pose)) for pose in profile['poses']]
+        self.limit=profile['speed']
+        self.velocity=(0.,0.)
+        self.direction='waiting';self.deviations={};self.tilt=None;self.last=0.
     def calibrate(self,samples):
         self.axes=basis(tuple(statistics.mean(v[i] for v in samples) for i in range(3)))
         self.velocity=(0.,0.)
@@ -98,18 +111,34 @@ class Controller:
         self.last=now
         if self.axes is None or not .8<=norm<=1.2:
             self.velocity=(0.,0.)
+            self.direction='invalid';self.deviations={};self.tilt=None
             return
         g=unit(raw)
         neutral,right,up=self.axes
         denom=dot(g,neutral)
-        if denom<.5:
-            self.velocity=(0.,0.)
+        self.tilt=math.degrees(math.acos(max(-1,min(1,denom))))
+        names=('right','left','up','down') if len(self.poses)==5 else ('right','up')
+        self.deviations={name:math.degrees(math.acos(max(-1,min(1,dot(g,pose)))))
+                         for name,pose in zip(names,self.poses[1:])}
+        # Neutral always wins over overlapping direction ranges, and stops immediately.
+        if self.tilt<=self.neutral_zone:
+            self.velocity=(0.,0.);self.direction='neutral'
             return
-        target=(self.sx*speed(math.atan2(dot(g,right),denom),self.limit),
-                self.sy*speed(math.atan2(dot(g,up),denom),self.limit))
+        matches=[name for name,deviation in self.deviations.items()
+                 if deviation<=self.direction_ranges.get(name,-1)]
+        if denom<.5 and not matches:
+            self.velocity=(0.,0.);self.direction='outside'
+            return
+        self.direction=min(matches,key=self.deviations.get) if matches else 'free'
+        target=(self.sx*speed(math.atan2(dot(g,right),denom),self.limit,self.neutral_zone),
+                self.sy*speed(math.atan2(dot(g,up),denom),self.limit,self.neutral_zone))
+        if matches:
+            magnitude=speed(math.radians(self.tilt),self.limit,self.neutral_zone)
+            target={'right':(self.sx*magnitude,0.),'left':(-self.sx*magnitude,0.),
+                    'up':(0.,self.sy*magnitude),'down':(0.,-self.sy*magnitude)}[self.direction]
         self.velocity=tuple(.4*old+.6*new for old,new in zip(self.velocity,target))
     def current(self,now):
-        return (0.,0.) if self.paused or now-self.last>.35 else self.velocity
+        return (0.,0.) if self.paused or (not self.hold_between_samples and now-self.last>.35) else self.velocity
 
 async def find_ring(name):
     manager=CentralManagerDelegate.alloc().init()

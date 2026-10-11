@@ -30,11 +30,40 @@ class Device:
         self.client=None;self.task=None;self.stop=asyncio.Event();self.lock=asyncio.Lock();self.measure_lock=asyncio.Lock()
         self.waiter=None;self.active=None;self.measure_done=asyncio.Event();self.samples=asyncio.Event();self.touch_original=None;self.auto_original={}
         self.touch_on=False;self.other_notifications=set();self.control=Controller();self.peers=set();self.records=deque(maxlen=1000);self.evidence={};self.options={k:False for k in ('mouse','click','accel','touch','hr','spo2','battery','calibration','raw_gatt')}
-        self.options.update(health_interval=120,accel_interval=.15,manage_auto=True)
+        self.options.update(health_interval=120,accel_interval=.15,manage_auto=True,gesture_debounce=.5,neutral_zone=8,
+                            **{'direction_range_'+name:20 for name in ('right','left','up','down')})
+        self.preferences_path=self.folder/'preferences.json'
+        self.preferences={}
+        try:
+            saved=json.loads(self.preferences_path.read_text())
+            if isinstance(saved,dict):
+                self.preferences=saved
+                for key,limits in self.preference_limits().items():
+                    value=saved.get(key)
+                    if self.valid_number(value,*limits):self.options[key]=float(value)
+        except (OSError,ValueError,AttributeError):pass
+        self.apply_motion_settings()
+        try:
+            p=json.loads(self.profile_path.read_text())
+            if p.get('name')=='R08_E703':self.control.load_profile(p)
+        except (OSError,ValueError,KeyError,TypeError):pass
         self.state={'connected':False,'message':'尚未連線','name':'R08_E703','battery':None,'charging':None,'hardware':None,'firmware':None,'values':{},'options':self.options,'paused':True,'auto_status':'未讀取','access':Q.CGPreflightPostEventAccess(),'gatt':[]}
         self.log_path=self.folder/('session-'+datetime.now().strftime('%Y%m%d-%H%M%S')+'.jsonl')
         self.log_file=self.log_path.open('a',buffering=1)
         self.pending=set();self.other_failed=set();self.last_gesture=0;self.channels={};self.next_health={};self.next_battery=0;self.last_poll=0
+        self.gesture_sequence=0;self.gesture_counts={};self.gesture_history=deque(maxlen=8);self.measurement_sequence=0
+        self.state['measurements']={}
+    @staticmethod
+    def preference_limits():
+        return {'gesture_debounce':(0,2),'neutral_zone':(0,20),
+                **{'direction_range_'+name:(2,60) for name in ('right','left','up','down')}}
+    @staticmethod
+    def valid_number(value,low,high):
+        return isinstance(value,(int,float)) and not isinstance(value,bool) and math.isfinite(value) and low<=value<=high
+    def apply_motion_settings(self):
+        self.control.hold_between_samples=True
+        self.control.neutral_zone=self.options['neutral_zone']
+        self.control.direction_ranges={name:self.options['direction_range_'+name] for name in ('right','left','up','down')}
     def log(self,direction,**fields):
         row={'time':datetime.now().astimezone().isoformat(),'direction':direction,**fields}
         self.records.append(row);self.log_file.write(json.dumps(row,ensure_ascii=False)+'\n')
@@ -50,7 +79,32 @@ class Device:
         self.log('系統',message=message);self.emit({'type':'status','connected':connected,'message':message})
     def snapshot(self):
         self.state.update(paused=self.control.paused,access=Q.CGPreflightPostEventAccess(),calibrated=self.profile_path.exists(),active_measurement=self.active,channels=self.channels)
-        return {**self.state,'evidence':self.evidence,'catalog':self.catalog,'read_queries':[{'key':k,'opcode':f'{v[0]:02X}','payload':v[1].hex(' ')} for k,v in SAFE_READS.items()],'logs':list(self.records),'log_file':self.log_path.name}
+        return {**self.state,'control':self.control_snapshot(),'gesture_history':list(reversed(self.gesture_history)),'evidence':self.evidence,'catalog':self.catalog,'read_queries':[{'key':k,'opcode':f'{v[0]:02X}','payload':v[1].hex(' ')} for k,v in SAFE_READS.items()],'logs':list(self.records),'log_file':self.log_path.name}
+    def control_snapshot(self):
+        access=bool(Q.CGPreflightPostEventAccess())
+        now=time.monotonic();age=now-self.control.last if self.control.last else None
+        fresh=age is not None and age<=.35
+        if not self.state['connected']:mode,label='disconnected','未連線'
+        elif not self.options['mouse']:mode,label='off','關閉'
+        elif not access:mode,label='permission','需授權'
+        elif self.active is not None:mode,label='measuring','量測中'
+        elif self.control.paused:mode,label='paused','暫停'
+        elif any(self.control.current(now)):mode,label=('moving','移動中') if fresh else ('holding','延續移動')
+        elif not fresh:mode,label='stale','待資料'
+        else:mode,label='ready','待命'
+        return {'connected':self.state['connected'],'mouse':self.options['mouse'],'click':self.options['click'],
+                'paused':self.control.paused,'access':access,'calibrated':self.profile_path.exists(),
+                'calibration':self.options['calibration'],'active_measurement':self.active,
+                'mode':mode,'label':label,'direction':self.control.direction,
+                'deviations':self.control.deviations,'tilt':self.control.tilt,
+                'sample_age':age,'velocity':self.control.current(now)}
+    def resume_mouse(self):
+        if not self.state['connected']:raise ValueError('請先連接戒指')
+        if not self.options['mouse']:raise ValueError('請先啟用 Mac 游標控制')
+        if not Q.CGPreflightPostEventAccess():raise ValueError('請授權 QRing Studio；若剛完成授權，請完整結束 App 再重新開啟')
+        if self.active is not None:raise ValueError('量測中，請等量測結束再開始控制')
+        self.control.velocity=(0.,0.);self.control.paused=False
+        self.log('系統',message='從選單列開始滑鼠控制')
     def notify(self,char,data):
         f=bytes(data);valid=len(f)==16 and sum(f[:15])&255==f[15]
         self.log('RX',characteristic=str(char.uuid),hex=f.hex(' '),checksum=valid)
@@ -68,26 +122,40 @@ class Device:
         if op==0x73:
             sub=f[1];self.state['last_notification']={'sub':sub,'payload':list(f[2:15])}
             if sub==0x2d:
-                code=f[2];self.evidence['touch']='實機回報';self.state['values']['gesture']={'code':code,'name':{1:'上滑',2:'下滑',3:'單擊',4:'長按'}.get(code,'未知'),'time':datetime.now().astimezone().isoformat()};self.emit({'type':'gesture','code':code})
+                code=f[2];self.evidence['touch']='實機回報'
+                self.gesture_sequence+=1;self.gesture_counts[code]=self.gesture_counts.get(code,0)+1
+                gesture={'code':code,'name':{1:'上滑',2:'下滑',3:'單擊',4:'長按'}.get(code,'未知'),
+                         'time':datetime.now().astimezone().isoformat(),'sequence':self.gesture_sequence,'count':self.gesture_counts[code],'action':'僅記錄觸控'}
                 now=time.monotonic()
-                if now-self.last_gesture>.5:
+                if self.options['gesture_debounce']==0 or now-self.last_gesture>=self.options['gesture_debounce']:
                     self.last_gesture=now
                     if code==4 and self.options['mouse']:
                         self.control.paused=not self.control.paused;self.control.velocity=(0.,0.);self.log('系統',message='滑鼠暫停' if self.control.paused else '滑鼠移動啟用')
-                    if code==3 and self.options['mouse'] and self.options['click'] and self.active is None and not self.control.paused and now-self.control.last<.35 and Q.CGPreflightPostEventAccess():
+                        gesture['action']='游標已暫停' if self.control.paused else '游標控制已開始'
+                    if code==3 and self.state['connected'] and self.options['mouse'] and self.options['click'] and self.active is None and not self.control.paused and self.control.last>0 and Q.CGPreflightPostEventAccess():
                         p=Q.CGEventGetLocation(Q.CGEventCreate(None))
                         for typ in (Q.kCGEventLeftMouseDown,Q.kCGEventLeftMouseUp):Q.CGEventPost(Q.kCGHIDEventTap,Q.CGEventCreateMouseEvent(None,typ,p,Q.kCGMouseButtonLeft))
                         self.log('輸出',message='左鍵點擊')
+                        gesture['action']='送出左鍵點擊'
+                elif self.options['mouse']:gesture['action']='已收到；未重複執行控制'
+                self.state['values']['gesture']=gesture;self.gesture_history.append(gesture)
+                self.emit({'type':'gesture','code':code,'gesture':gesture,'calibration':self.options['calibration']})
         if op==0x69:
             typ,err,value=f[1],f[2],f[3]
             feature=MEASUREMENTS.get(typ,('unknown','',''))[0]
-            result={'type':typ,'error':err,'value':value,'raw_payload':list(f[1:15]),'time':datetime.now().astimezone().isoformat()}
+            result={'type':typ,'error':err,'value':value,'raw_payload':list(f[1:15]),'hex':f.hex(' '),'time':datetime.now().astimezone().isoformat()}
             if typ in (1,3) and err==0 and value>0:
-                result['display']=f'{value} {MEASUREMENTS[typ][2]}';self.evidence[feature]='實機有效值回報（準確度未驗證）';self.measure_done.set()
-            elif err==2:result['display']='配戴接觸不良';self.evidence[feature]='有回應／配戴失敗';self.measure_done.set()
-            elif err==1:result['display']='完成訊號，無已解碼有效值';self.evidence[feature]='回報完成訊號';self.measure_done.set()
+                result['display']=f'{value} {MEASUREMENTS[typ][2]}';self.evidence[feature]='實機有效值回報（準確度未驗證）'
+            elif err==2:result['display']='配戴接觸不良';self.evidence[feature]='有回應／配戴失敗'
+            elif err==1:result['display']='完成訊號，無已解碼有效值';self.evidence[feature]='回報完成訊號'
             else:result['display']='量測中／未收斂';self.evidence[feature]='有回應，尚無有效值'
+            if self.active==typ and (err in (1,2) or (typ in (1,3) and err==0 and value>0)):self.measure_done.set()
             self.state['values'][feature]=result
+            run=self.state['measurements'].get(feature)
+            if self.active==typ and run and run['status'] in ('waiting','running'):
+                run['response_count']+=1;run['latest']=result;run['updated_at']=result['time'];run['status']='running'
+                run['responses']=(run['responses']+[result])[-6:]
+                run['message']=result['display']
         if op<0x80 and op not in (3,0x3c,0x69,0x73):self.state['values'][f'op_{op:02x}']={'hex':f.hex(' '),'time':datetime.now().astimezone().isoformat()}
     async def send(self,op,payload=b'',reply=True,timeout=2):
         async with self.lock:
@@ -164,22 +232,46 @@ class Device:
         for key in ('mouse','click','accel','touch','hr','spo2','battery','calibration','raw_gatt','manage_auto'):
             if not isinstance(opts[key],bool):raise ValueError('選項必須是勾選值')
         if not 60<=float(opts['health_interval'])<=3600 or not .1<=float(opts['accel_interval'])<=2:raise ValueError('讀取間隔超出範圍')
+        for key,(low,high) in self.preference_limits().items():
+            if not self.valid_number(opts[key],low,high):
+                raise ValueError('觸控防重複間隔必須是 0–2 秒' if key=='gesture_debounce' else
+                                 ('中立停止區必須是 0–20 度' if key=='neutral_zone' else '方向容許偏差必須是 2–60 度'))
         if opts['calibration']:opts['mouse']=False;opts['click']=False
         if opts['mouse']:
             if not self.profile_path.exists():raise ValueError('請先完成五步校正並儲存')
             if not Q.CGPreflightPostEventAccess():raise ValueError('請在系統設定的裝置控制和資料取用授權 QRing Studio')
-            p=json.loads(self.profile_path.read_text());self.control.axes=profile_axes(p);self.control.limit=p['speed']
-            if not self.options['mouse']:self.control.paused=True
+            p=json.loads(self.profile_path.read_text())
+            if not self.options['mouse']:
+                self.control.load_profile(p);self.control.paused=True
         else:self.control.paused=True;opts['click']=False
-        previous=self.options.copy();self.options.update(opts)
+        previous=self.options.copy()
+        if set(changes)&set(self.preference_limits()):
+            temporary=self.preferences_path.with_suffix('.tmp')
+            preferences={**self.preferences,**{key:opts[key] for key in self.preference_limits() if key in changes}}
+            temporary.write_text(json.dumps(preferences,allow_nan=False,indent=2))
+            os.replace(temporary,self.preferences_path)
+            self.preferences=preferences
+        self.options.update(opts)
+        self.apply_motion_settings()
+        # A changed range takes effect on the latest valid sample, without recalibration.
+        if set(changes)&(set(self.preference_limits())-{'gesture_debounce'}):
+            value=self.state['values'].get('accel')
+            if value and self.control.last:self.control.update(value['raw'],self.control.last)
         if previous['manage_auto']!=opts['manage_auto'] and self.state['connected']:await self.manage_auto(opts['manage_auto'])
-        if self.active and not self.options.get(MEASUREMENTS[self.active][0],False):self.measure_done.set()
+        if self.active:
+            key=MEASUREMENTS[self.active][0]
+            if previous.get(key,False) and not self.options.get(key,False):self.measure_done.set()
         self.log('選項',options=self.options.copy())
     async def measure(self,typ,manual=False,timeout=40):
         if typ not in MEASUREMENTS or typ==7:raise ValueError('本版未提供未確認的 ECG 啟動流程')
         if self.measure_lock.locked():raise ValueError('另一項量測正在進行')
         async with self.measure_lock:
             self.active=typ;self.measure_done.clear();key=MEASUREMENTS[typ][0]
+            self.measurement_sequence+=1
+            stamp=datetime.now().astimezone().isoformat()
+            run={'type':typ,'run_id':self.measurement_sequence,'status':'waiting','started_at':stamp,'updated_at':stamp,
+                 'ended_at':None,'response_count':0,'latest':None,'responses':[],'message':'正在等待戒指回應','timeout_seconds':timeout}
+            self.state['measurements'][key]=run
             self.log('量測',feature=key,message='開始單次量測' if manual else '勾選項目的排程量測')
             try:
                 await self.send(0x69,bytes([typ,1]),reply=False)
@@ -188,15 +280,28 @@ class Device:
                     if not manual and not self.options.get(key,False):break
                     try:await asyncio.wait_for(self.measure_done.wait(),.4);break
                     except asyncio.TimeoutError:pass
-                result=self.state['values'].get(key)
-                if not result or result.get('time','')<datetime.fromtimestamp(time.time()-(time.monotonic()-started)).astimezone().isoformat():
+                result=run['latest']
+                if self.stop.is_set() or (not manual and not self.options.get(key,False)):
+                    run.update(status='cancelled',message='測試已停止，保留本次收到的回應')
+                elif result and result['error']==2:
+                    run.update(status='failed',message='配戴接觸不良，請調整戒指後重試')
+                elif result and (result['error']==1 or (typ in (1,3) and result['error']==0 and result['value']>0)):
+                    run.update(status='completed',message=result['display'])
+                else:
+                    run.update(status='timeout',message='已收到原始回應，但測試逾時，尚無已解碼有效值' if result else '測試逾時，本次未收到回應')
+                if not result:
                     self.evidence[key]='本次無有效回報'
                 return result
+            except asyncio.CancelledError:
+                run.update(status='cancelled',message='測試已停止，保留本次收到的回應');raise
+            except Exception as e:
+                run.update(status='failed',message='測試失敗：'+str(e));raise
             finally:
                 try:
                     if self.client and self.client.is_connected:await self.send(0x6a,bytes([typ,4,0]),timeout=2)
                 except Exception as e:self.log('錯誤',feature=key,message='停止量測時連線已中斷：'+str(e))
                 self.active=None;self.next_health[key]=time.monotonic()+self.options['health_interval']
+                run['ended_at']=datetime.now().astimezone().isoformat();run['updated_at']=run['ended_at']
                 self.log('量測',feature=key,message='已送停止指令；不保證所有韌體回覆停止 ACK')
     async def scheduler(self):
         while not self.stop.is_set():
@@ -234,7 +339,7 @@ class Device:
         last=time.monotonic();last_log=0
         while not self.stop.is_set():
             now=time.monotonic();dt=min(.04,now-last);last=now
-            if self.options['mouse'] and self.active is None and Q.CGPreflightPostEventAccess():
+            if self.state['connected'] and self.options['mouse'] and self.active is None and Q.CGPreflightPostEventAccess():
                 vx,vy=self.control.current(now)
                 if vx or vy:
                     p=Q.CGEventGetLocation(Q.CGEventCreate(None));b=Q.CGDisplayBounds(Q.CGMainDisplayID())
