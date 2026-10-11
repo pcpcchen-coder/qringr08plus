@@ -12,6 +12,10 @@
 
 [查詢與來源索引](docs/ring-research/README.md)彙整配戴／取下判斷、充電處理、關機與官方耗電規格，並連結既有觸控、加速度與健康能力實測。每份記錄附來源、查核日期及待驗證項目。
 
+## QRing Hand：用戒指控制機器手掌
+
+握拳時，接在 Raspberry Pi 上的 Amazing Hand 右手跟著握拳。它是獨立的 Mac App，程式放在手那一邊的 Repo：[this-is-yourX](https://github.com/pcpcchen-coder/this-is-yourX) 的 `right_hand/control_methods/qring_fist/`（[PR #6](https://github.com/pcpcchen-coder/this-is-yourX/pull/6)）。這裡只留[說明與這次在戒指上看到的事](docs/2026-10-11-qring-hand.md)，包含三軸更新率約 4 Hz 的觀察。
+
 ## QRing Studio 0.3.0 Mac App
 
 可安裝的 Apple Silicon Mac App 已完成：勾選式滑鼠控制、五步方向校正、裝置電量與版本、按需心率／血氧量測、能力探索與完整本機收發紀錄。
