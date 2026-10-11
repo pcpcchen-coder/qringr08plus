@@ -14,7 +14,7 @@
 
 ## QRing Hand：用戒指控制機器手掌
 
-握拳時，接在 Raspberry Pi 上的 Amazing Hand 右手跟著握拳。它是獨立的 Mac App，程式放在手那一邊的 Repo：[this-is-yourX](https://github.com/pcpcchen-coder/this-is-yourX) 的 `right_hand/control_methods/qring_fist/`（[PR #6](https://github.com/pcpcchen-coder/this-is-yourX/pull/6)）。這裡只留[說明與這次在戒指上看到的事](docs/2026-10-11-qring-hand.md)，包含三軸更新率約 4 Hz 的觀察。
+握拳時，接在 Raspberry Pi 上的 Amazing Hand 右手跟著握拳。它是獨立的 Mac App，程式放在手那一邊的 Repo：[this-is-yourX](https://github.com/pcpcchen-coder/this-is-yourX) 的 `right_hand/control_methods/qring_fist/`（[PR #6](https://github.com/pcpcchen-coder/this-is-yourX/pull/6)）。這裡只留[說明與這次在戒指上看到的事](docs/2026-10-11-qring-hand.md)，包含三軸更新率的觀察：等回報再送約 4 Hz，固定每 0.1 秒送一次約 10–15 Hz。
 
 ## QRing Studio 0.3.0 Mac App
 
