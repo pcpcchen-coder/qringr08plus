@@ -32,7 +32,7 @@ if __name__=='__main__':
     for file in ('server.py','device.py','ring_mouse.py','catalog.json','verified-device.json'):
         shutil.copy2(ROOT/file,appcode/file)
     shutil.copytree(ROOT/'web',appcode/'web')
-    info={'CFBundleIdentifier':'com.pcpcchen.qringstudio','CFBundleName':'QRing Studio','CFBundleDisplayName':'QRing Studio','CFBundleExecutable':'QRingStudio','CFBundlePackageType':'APPL','CFBundleShortVersionString':'0.3.0','CFBundleVersion':'3','LSMinimumSystemVersion':'13.0','NSHighResolutionCapable':True,'NSBluetoothAlwaysUsageDescription':'連接你的 QRing 戒指，讀取勾選的感測資料與觸控事件。','NSBluetoothPeripheralUsageDescription':'連接你的 QRing 戒指。','NSAppTransportSecurity':{'NSAllowsLocalNetworking':True}}
+    info={'CFBundleIdentifier':'com.pcpcchen.qringstudio','CFBundleName':'QRing Studio','CFBundleDisplayName':'QRing Studio','CFBundleExecutable':'QRingStudio','CFBundlePackageType':'APPL','CFBundleShortVersionString':'0.4.0','CFBundleVersion':'4','LSMinimumSystemVersion':'13.0','NSHighResolutionCapable':True,'NSBluetoothAlwaysUsageDescription':'連接你的 QRing 戒指，讀取勾選的感測資料與觸控事件。','NSBluetoothPeripheralUsageDescription':'連接你的 QRing 戒指。','NSAppTransportSecurity':{'NSAllowsLocalNetworking':True}}
     (APP/'Contents/Info.plist').write_bytes(plistlib.dumps(info))
     subprocess.run(['swiftc','-O','-target','arm64-apple-macosx13.0','-framework','Cocoa','-framework','WebKit',str(ROOT/'native/Studio.swift'),'-o',str(mac/'QRingStudio')],check=True)
     subprocess.run(['codesign','--force','--deep','--sign','-',str(APP)],check=True)

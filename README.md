@@ -16,23 +16,25 @@
 
 握拳時，接在 Raspberry Pi 上的 Amazing Hand 右手跟著握拳。它是獨立的 Mac App，程式放在手那一邊的 Repo：[this-is-yourX](https://github.com/pcpcchen-coder/this-is-yourX) 的 `right_hand/control_methods/qring_fist/`（[PR #6](https://github.com/pcpcchen-coder/this-is-yourX/pull/6)）。這裡只留[說明與這次在戒指上看到的事](docs/2026-10-11-qring-hand.md)，包含三軸更新率的觀察：等回報再送約 4 Hz，固定每 0.1 秒送一次約 10–15 Hz。
 
-## QRing Studio 0.3.0 Mac App
+## QRing Studio 0.4.0 Mac App
 
 可安裝的 Apple Silicon Mac App 已完成：勾選式滑鼠控制、五步方向校正、裝置電量與版本、按需心率／血氧量測、能力探索與完整本機收發紀錄。
 
 0.3.0 加入常駐選單列圖示、游標狀態文字與下拉快捷控制；關閉主視窗後仍可在選單列操作。[選單列使用說明](mac-app/README.md#選單列狀態與快捷操作)。
 
-[App 安裝與開發文件](mac-app/README.md) · [0.3.0 完整進度與驗證](docs/2026-10-11-studio-0.3.0-progress.md) · [版本紀錄](CHANGELOG.md)
+[App 安裝與開發文件](mac-app/README.md) · [0.4.0 快照輪詢調校](docs/2026-10-12-snapshot-polling.md) · [0.3.0 功能進度](docs/2026-10-11-studio-0.3.0-progress.md) · [版本紀錄](CHANGELOG.md)
 
 所有 App 持續量測預設關閉；未確認的協定功能標示為候選。戒指內建心率排程的停止尚未確認，詳見文件。健康數值與個人校正檔不提交至此公開 Repo。
 
-Repo 已收錄 0.3.0 的完整原始碼、測試與建置腳本；二進位安裝包仍為本機產物，尚未發布 GitHub Release。詳見 [建置產物說明](releases/README.md)。
+Repo 已收錄 0.4.0 的完整原始碼、測試與建置腳本；二進位安裝包仍為本機產物，尚未發布 GitHub Release。詳見 [建置產物說明](releases/README.md)。
 
-0.3.0 另包含：姿勢穩定後以戒指單擊確認校正、重複觸控的時間與次數回饋、健康候選的本次原始讀值、可儲存的防重複間隔與四方向容許範圍。資料間隙會延續游標速度，回中立立即停止。充電自動暫停與配戴偵測仍是規劃，沒有當成已完成功能。
+0.4.0 新增快照輪詢調校，可分別設定發送節拍、取樣等待上限與輪後休息時間；顯示實際送出、接收、數值變化及等待逾時統計。
+
+0.3.0 已包含：姿勢穩定後以戒指單擊確認校正、重複觸控的時間與次數回饋、健康候選的本次原始讀值、可儲存的防重複間隔與四方向容許範圍。資料間隙會延續游標速度，回中立立即停止。充電自動暫停與配戴偵測仍是規劃，沒有當成已完成功能。
 
 ## 獨立 CLI 舊原型
 
-以下是根目錄獨立 CLI／早期校正工具的使用紀錄，與 `mac-app/` 的 0.3.0 App 分開。CLI 的 0.35 秒逾時停止預設保留；最新 App 行為請看上方文件。
+以下是根目錄獨立 CLI／早期校正工具的使用紀錄，與 `mac-app/` 的最新 App 分開。CLI 的 0.35 秒逾時停止預設保留；最新 App 行為請看上方文件。
 
 將 QRing R08 的加速度與觸控事件轉成 Mac 輸入。目前有傾斜滑鼠原型，使用者已確認游標能移動；原本方向不符合直覺，因此新增五姿勢校正網頁。
 

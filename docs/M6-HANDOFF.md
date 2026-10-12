@@ -1,19 +1,21 @@
-# M6 Mac 接手指南：QRing Studio 0.3.0
+# M6 Mac 接手指南：QRing Studio 0.4.0
 
-更新日期：2026-10-11（Asia/Taipei）。已完成 M6 原始碼接手、開發環境、原生介面、戒指連線、加速度取樣與既有權限排查。歷程見 [M6 本機紀錄](2026-10-09-m6-setup.md)，最新功能與驗證見 [0.3.0 進度](2026-10-11-studio-0.3.0-progress.md)。
+更新日期：2026-10-12（Asia/Taipei）。已完成 M6 原始碼接手、開發環境、原生介面、戒指連線、加速度取樣與既有權限排查。歷程見 [M6 本機紀錄](2026-10-09-m6-setup.md)，最新功能與驗證見 [0.3.0 進度](2026-10-11-studio-0.3.0-progress.md)。
+
+新增快照輪詢節拍與等待設定，見 [0.4.0 輪詢調校](2026-10-12-snapshot-polling.md)。
 
 ## 接手狀態
 
 - 最新 App 原始碼、UI、BLE 引擎、校正流程、建置腳本與測試完整收錄在 `mac-app/`。
 - 已整合選單列、戒指單擊校正、觸控／健康候選回饋、可儲存的防重複與方向範圍、資料間隙續移。
-- 合計 43 項合成測試，封裝啟動及簽章檢查；實際驗證日期與範圍見進度文件。
+- 合計 50 項合成測試，封裝啟動及簽章檢查；實際驗證日期與範圍見進度文件。
 - M6 實機曾驗證連線、加速度、原生設定介面與權限恢復；完整方向手感、誤觸率、長期穩定性與耗電尚待測試。
 - 健康有效回報與醫療準確度分開；未知候選只顯示原始讀值。充電自動暫停與配戴偵測尚未實作。
 - 內建心率排程的關閉 ACK 後讀回未改變，只能保證 App 不主動啟動未勾選項目。
 
 ## 先帶走哪些東西
 
-1. **安裝包**：0.3.0 請從最新原始碼建置，見 [建置產物說明](../releases/README.md)。尚無 GitHub Release 二進位下載。以下 QRing-Studio-0.2.0-arm64.dmg 為早期交付的歷史包，不能當作新版。
+1. **安裝包**：0.4.0 請從最新原始碼建置，見 [建置產物說明](../releases/README.md)。尚無 GitHub Release 二進位下載。以下 QRing-Studio-0.2.0-arm64.dmg 為早期交付的歷史包，不能當作新版。
    原機位置：~/Projects/AIRingAgent/releases/。
    安裝包沒有上傳 GitHub Release，單純 clone Repo 不會取得二進位 App。
    SHA-256：
@@ -104,7 +106,7 @@ build_app.py 會重建 Repo 的 releases/.build.noindex/QRing Studio.app；不�
 | mac-app/web/ | App 主介面與五步校正 |
 | mac-app/catalog.json | 社群協定入口，不能當作實機支援清單 |
 | mac-app/verified-device.json | 綁定本戒指與韌體的既有實測，不含個人健康數值 |
-| mac-app/test_studio.py | 31 項合成 unit/API 測試 |
+| mac-app/test_studio.py | 38 項合成 unit/API 測試 |
 | mac-app/test_calibration.cjs | 12 項 JavaScript 校正與移動規則測試 |
 | mac-app/build_app.py | 內建 runtime 打包與 ad-hoc 簽章 |
 | requirements.txt | 版本固定的相依套件 |

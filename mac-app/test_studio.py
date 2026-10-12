@@ -9,7 +9,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 from aiohttp.test_utils import TestClient,TestServer
-from device import Device,pack,NOTIFY,Q
+from device import Device,SnapshotStats,pack,NOTIFY,Q
 from server import create_app
 from ring_mouse import profile_axes,Controller
 
@@ -26,6 +26,77 @@ class DeviceTests(unittest.IsolatedAsyncioTestCase):
         await asyncio.sleep(.35);d.stop.set();await asyncio.gather(*tasks)
         self.assertEqual(calls,[])
         self.assertTrue(all(not d.options[k] for k in ['mouse','click','accel','touch','hr','spo2','battery','raw_gatt']))
+    async def test_poll_period_and_pause_have_distinct_timing(self):
+        d=self.device;d.options.update(accel=True,accel_period=.02,accel_timeout=.03,accel_interval=.005)
+        sent=[]
+        async def send(op,payload=b'',**kw):
+            if op==0xa1 and payload==b'\x03':
+                sent.append(time.monotonic())
+                d.notify(SimpleNamespace(uuid=NOTIFY),pack(0xa1,b'\x03\x00\x00\x00\x00\x20\x00'))
+                if len(sent)==5:d.stop.set()
+        d.send=send;await d.polling()
+        self.assertEqual(len(sent),5)
+        self.assertTrue(all(b-a>=.019 for a,b in zip(sent,sent[1:])))
+        self.assertEqual(d.poll_stats.sent,5);self.assertEqual(d.poll_stats.received,5)
+        self.assertEqual(d.poll_stats.waited,5);self.assertEqual(d.poll_stats.timeouts,0)
+    async def test_poll_timeout_then_pause_when_ring_does_not_respond(self):
+        d=self.device;d.options.update(accel=True,accel_period=0,accel_timeout=.005,accel_interval=.006)
+        sent=[]
+        async def send(op,payload=b'',**kw):
+            sent.append(time.monotonic())
+            if len(sent)==3:d.stop.set()
+        d.send=send;await d.polling()
+        self.assertTrue(all(b-a>=.010 for a,b in zip(sent,sent[1:])))
+        self.assertEqual(d.poll_stats.timeouts,3);self.assertEqual(d.poll_stats.received,0)
+    async def test_fastest_poll_stays_sequential_and_yields_without_fake_timeouts(self):
+        d=self.device;d.options.update(accel=True,accel_period=0,accel_timeout=0,accel_interval=0)
+        writes=0;concurrent=0;maximum=0;beats=0
+        async def send(*args,**kw):
+            nonlocal writes,concurrent,maximum
+            concurrent+=1;maximum=max(maximum,concurrent);await asyncio.sleep(0)
+            concurrent-=1;writes+=1
+            if writes==6:d.stop.set()
+        async def heartbeat():
+            nonlocal beats
+            while not d.stop.is_set():beats+=1;await asyncio.sleep(0)
+        d.send=send;await asyncio.gather(d.polling(),heartbeat())
+        self.assertEqual(writes,6);self.assertEqual(maximum,1);self.assertGreater(beats,1)
+        self.assertEqual(d.poll_stats.no_wait,6);self.assertEqual(d.poll_stats.waited,0)
+        self.assertEqual(d.poll_stats.timeouts,0)
+    async def test_poll_stats_distinguish_arrivals_changes_timeouts_and_stale_data(self):
+        stats=SnapshotStats(now=0)
+        for t in (.2,1.3,2.7):stats.record_send(t)
+        for t,v in ((.1,[1,2,3]),(.5,[1,2,3]),(1.5,[2,2,3]),(2.5,[2,2,3])):stats.record_sample(v,t)
+        stats.record_wait(.01,False);stats.record_wait(.03,True)
+        s=stats.snapshot(3)
+        self.assertEqual((s['tx_hz'],s['rx_hz'],s['change_hz']),(1,1,.5))
+        self.assertEqual((s['sent'],s['received'],s['changed']),(3,4,1))
+        self.assertAlmostEqual(s['mean_wait_ms'],20);self.assertEqual(s['timeout_percent'],50)
+        self.assertEqual(s['sample_age'],.5);self.assertEqual(s['max_gap_ms'],1000)
+        self.assertEqual(stats.snapshot(6)['rx_hz'],0)
+        self.assertIsNone(SnapshotStats(now=0).snapshot(1)['sample_age'])
+    async def test_poll_preferences_persist_and_do_not_change_mouse_or_manual_measurement(self):
+        d=self.device;z=math.sqrt(.75)
+        d.profile_path.write_text(json.dumps({'version':2,'name':'R08_E703','speed':220,'poses':[[0,0,1],[-.5,0,z],[.5,0,z],[0,-.5,z],[0,.5,z]]}))
+        await d.set_options({'gesture_debounce':.2,'direction_range_right':30})
+        d.options['mouse']=True;d.control.paused=False;d.control.velocity=(77,0);d.active=2
+        with patch.object(Q,'CGPreflightPostEventAccess',return_value=True):
+            await d.set_options({'accel_period':.01,'accel_timeout':0,'accel_interval':0})
+        self.assertFalse(d.control.paused);self.assertEqual(d.control.velocity,(77,0))
+        self.assertFalse(d.measure_done.is_set())
+        restored=Device(self.temp.name)
+        try:
+            self.assertEqual(restored.options['accel_period'],.01)
+            self.assertEqual(restored.options['accel_timeout'],0);self.assertEqual(restored.options['accel_interval'],0)
+            self.assertEqual(restored.options['gesture_debounce'],.2)
+            self.assertEqual(restored.options['direction_range_right'],30)
+            self.assertFalse(restored.options['mouse']);self.assertTrue(restored.control.paused)
+        finally:restored.log_file.close()
+    async def test_stat_reset_during_inflight_wait_does_not_add_old_wait_to_new_run(self):
+        d=self.device;old=d.poll_stats;old.record_send(time.monotonic())
+        d.reset_poll_stats();old.record_wait(.1,True)
+        self.assertEqual(d.poll_stats.snapshot(time.monotonic())['timeouts'],0)
+        self.assertEqual(d.poll_stats.sent,0)
     async def test_only_selected_health_schedules(self):
         d=self.device;d.options['hr']=True;calls=[]
         async def measure(typ):calls.append(typ);d.stop.set()
@@ -242,6 +313,21 @@ class APITests(unittest.IsolatedAsyncioTestCase):
             r=await self.client.post('/api/options',json={'gesture_debounce':value},headers=self.headers)
             self.assertEqual(r.status,400);self.assertEqual(d.options['gesture_debounce'],.25)
             self.assertEqual(d.preferences_path.read_text(),saved)
+    async def test_polling_api_validates_bounds_and_reset_without_enabling_sensors(self):
+        r=await self.client.post('/api/options',json={'accel_period':0,'accel_timeout':.001,'accel_interval':0},headers=self.headers)
+        self.assertEqual(r.status,200);d=self.app['engine'];saved=d.preferences_path.read_text()
+        for key in ('accel_period','accel_timeout','accel_interval'):
+            for value in (-.001,2.001,True,'0.01',None,float('nan'),float('inf')):
+                r=await self.client.post('/api/options',json={key:value},headers=self.headers)
+                self.assertEqual(r.status,400);self.assertEqual(d.preferences_path.read_text(),saved)
+        d.poll_stats.record_send(time.monotonic())
+        h={**self.headers,'Origin':'https://example.com'}
+        r=await self.client.post('/api/polling/reset',json={},headers=h);self.assertEqual(r.status,403)
+        self.assertEqual(d.poll_stats.sent,1)
+        r=await self.client.post('/api/polling/reset',json={},headers=self.headers);self.assertEqual(r.status,200)
+        s=await (await self.client.get('/api/state',headers=self.headers)).json()
+        self.assertEqual(s['polling']['sent'],0);self.assertFalse(s['polling']['active'])
+        self.assertFalse(any(d.options[k] for k in ('accel','mouse','calibration','hr','spo2')))
     async def test_direction_settings_reject_invalid_values_and_keep_calibration(self):
         r=await self.client.post('/api/options',json={'direction_range_right':30,'neutral_zone':10},headers=self.headers)
         self.assertEqual(r.status,200);d=self.app['engine'];saved=d.preferences_path.read_text()

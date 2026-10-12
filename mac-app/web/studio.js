@@ -50,7 +50,7 @@ async function api(path,data={}){const r=await fetch(path,{method:'POST',headers
 async function action(fn){try{await fn();await refresh()}catch(e){notice(e.message)}}
 async function switchTab(next){if(next===tab)return;await action(async()=>{await api('/api/options',{calibration:next==='calibration'});tab=next;document.querySelectorAll('.tab').forEach(el=>el.hidden=el.id!==tab);document.querySelectorAll('[data-tab]').forEach(el=>el.classList.toggle('selected',el.dataset.tab===tab));if(tab==='calibration'){if($('calFrame').src.endsWith('about:blank'))$('calFrame').src='/calibration.html?v=ring-confirm-v1';else $('calFrame').contentWindow.postMessage({type:'qring-calibration-enter'},location.origin)}render()})}
 function render(){if(!state)return;const s=state;text($('connection'),s.connected?'已連線':s.message);$('connect').disabled=s.connected;$('disconnect').disabled=!s.connected;text($('name'),s.name);text($('hardware'),s.hardware||'硬體版本待讀取');text($('firmware'),s.firmware||'—');text($('serial'),s.serial?'序號：'+s.serial:'序號未提供');text($('battery'),s.battery===null?'—':`${s.battery}%`);text($('charging'),s.charging===null?'待讀取':s.charging?'充電中':'未充電');text($('autoStatus'),s.auto_status);text($('mouseStatus'),s.options.mouse?(s.paused?'已勾選，長按開始移動':(s.control?.label||'正在控制系統游標')):'尚未啟用');text($('calibrationStatus'),s.calibrated?'已有校正設定，啟用滑鼠會載入。':'請先完成中立、右、左、上、下校正。');
-renderDirectionRanges(s);
+renderDirectionRanges(s);renderPolling(s);
 if(!gestureIntervalDirty){const value=s.options.gesture_debounce??.5;$('gestureDebounce').value=value;$('gestureDebounceRange').value=value}text($('savedGestureInterval'),'目前套用：'+(s.options.gesture_debounce??.5).toFixed(2)+' 秒');
 document.querySelectorAll('[data-option]').forEach(el=>{if(document.activeElement!==el)el.checked=!!s.options[el.dataset.option];el.disabled=!s.connected&&el.dataset.option!=='manage_auto'});$('healthInterval').value=String(s.options.health_interval);document.querySelectorAll('[data-read],[data-measure]').forEach(el=>el.disabled=!s.connected||s.active_measurement!==null);$('pause').disabled=!s.options.mouse;document.querySelectorAll('[data-probe]').forEach(el=>el.disabled=!s.connected||s.active_measurement!==null||el.dataset.probe==='7');$('readSelected').disabled=!s.connected;
 text($('accelValue'),s.values.accel?s.values.accel.nominal_g.join(' / ')+' g':'—');renderGesture(s.values.gesture,s.gesture_history);text($('hrValue'),s.values.hr?(s.values.hr.display+' · '+s.values.hr.time.split('T')[1].slice(0,8)):'尚未量測');text($('spo2Value'),s.values.spo2?(s.values.spo2.display+' · '+s.values.spo2.time.split('T')[1].slice(0,8)):'尚未量測');renderCandidates();
@@ -133,3 +133,36 @@ for(const key of [...Object.keys(directionNames),'neutral']){
 }
 $('saveDirectionRanges').onclick=saveDirectionRanges;
 $('resetDirectionRanges').onclick=()=>{for(const key of Object.keys(directionNames))editDirectionRange(key,20);editDirectionRange('neutral',8);saveDirectionRanges()};
+
+const pollFields={period:'accel_period',timeout:'accel_timeout',pause:'accel_interval'};
+const pollDefaults={period:0,timeout:.35,pause:.15};
+const pollPresets={default:pollDefaults,'10':{period:.1,timeout:.08,pause:0},'20':{period:.05,timeout:.03,pause:0},fast:{period:0,timeout:0,pause:0}};
+let pollingDirty=false;
+function editPolling(key,value){pollingDirty=true;$('poll-'+key).value=value;$('poll-slider-'+key).value=value;}
+function renderPolling(s){
+ const p=s.polling||{},o=s.options;
+ for(const [key,option]of Object.entries(pollFields))if(!pollingDirty){const v=o[option]??pollDefaults[key];$('poll-'+key).value=v;$('poll-slider-'+key).value=v;}
+ text($('pollStatus'),p.label||'已停止');$('pollStatus').dataset.active=String(!!p.active);
+ const sec=key=>String(Number(o[pollFields[key]]??pollDefaults[key]));
+ text($('pollSaved'),`目前套用：節拍 ${sec('period')} 秒／等待取樣 ${sec('timeout')} 秒／休息 ${sec('pause')} 秒${pollingDirty?' · 編輯尚未儲存':''}`);
+ const hz=value=>Number(value||0).toFixed(1);
+ text($('pollTx'),hz(p.tx_hz)+' 次／秒');text($('pollRx'),hz(p.rx_hz)+' 筆／秒');text($('pollChanged'),hz(p.change_hz)+' 次／秒');
+ const age=p.sample_age==null?'尚無取樣':'最後取樣 '+p.sample_age.toFixed(2)+' 秒前';
+ const waits=p.waited?`等待逾時 ${p.timeouts}／${p.waited} 次（${p.timeout_percent.toFixed(1)}%），平均等待 ${p.mean_wait_ms.toFixed(1)} ms`:'尚無等待統計';
+ text($('pollDetails'),`統計 ${Number(p.elapsed_seconds||0).toFixed(1)} 秒 · 共送出 ${p.sent||0} 次／收到 ${p.received||0} 筆 · ${waits} · 不等待 ${p.no_wait||0} 次 · ${age}${p.max_gap_ms==null?'':' · 最近最大取樣間隔 '+p.max_gap_ms.toFixed(1)+' ms'}`);
+ $('startPolling').disabled=!s.connected||s.active_measurement!==null||!!p.active;
+ $('stopPolling').disabled=!s.connected||!['accel','mouse','calibration'].some(key=>o[key]);
+}
+async function savePolling(){
+ const changes={};
+ for(const [key,option]of Object.entries(pollFields)){const input=$('poll-'+key),value=Number(input.value);if(input.value===''||!Number.isFinite(value)||value<0||value>2){notice('快照輪詢時間請輸入 0–2 秒。');return;}changes[option]=value;}
+ $('savePolling').disabled=true;
+ try{await api('/api/options',changes);pollingDirty=false;await refresh();notice('快照輪詢設定已儲存，下一輪生效；統計已重置。');}
+ catch(e){notice(e.message);}finally{$('savePolling').disabled=false;}
+}
+for(const key of Object.keys(pollFields)){$('poll-'+key).oninput=()=>editPolling(key,$('poll-'+key).value);$('poll-slider-'+key).oninput=()=>editPolling(key,$('poll-slider-'+key).value);}
+document.querySelectorAll('[data-poll-preset]').forEach(b=>b.onclick=()=>{for(const [key,value]of Object.entries(pollPresets[b.dataset.pollPreset]))editPolling(key,value);if(state)renderPolling(state);});
+$('savePolling').onclick=savePolling;
+$('startPolling').onclick=()=>action(()=>api('/api/options',{accel:true}));
+$('stopPolling').onclick=()=>action(()=>api('/api/options',{accel:false,mouse:false,calibration:false}));
+$('resetPollingStats').onclick=()=>action(()=>api('/api/polling/reset'));

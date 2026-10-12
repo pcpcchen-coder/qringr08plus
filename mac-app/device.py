@@ -22,6 +22,35 @@ SAFE_READS={
  'power_saving':(0x76,b'\x00'),'ping':(0x18,b''),'hardware_alt':(0x93,b''),
  'ecg_settings':(0x6c,b'\x01'),'gesture_wake':(0x05,b'\x03'),'display_wake':(0x12,b'\x01')}
 
+class SnapshotStats:
+    """Arrival statistics, not request/reply pairing or native sensor frequency."""
+    def __init__(self,now=None):
+        self.started=time.monotonic() if now is None else now
+        self.tx=deque(maxlen=20000);self.rx=deque(maxlen=20000);self.changes=deque(maxlen=20000)
+        self.sent=0;self.received=0;self.changed=0;self.waited=0;self.timeouts=0;self.no_wait=0
+        self.wait_seconds=0.;self.last_raw=None;self.last_received=None
+    def record_send(self,now):self.sent+=1;self.tx.append(now)
+    def record_sample(self,raw,now):
+        self.received+=1;self.rx.append(now);value=tuple(raw)
+        if self.last_raw is not None and value!=self.last_raw:
+            self.changed+=1;self.changes.append(now)
+        self.last_raw=value;self.last_received=now
+    def record_wait(self,seconds,timed_out):
+        self.waited+=1;self.wait_seconds+=seconds;self.timeouts+=int(timed_out)
+    def snapshot(self,now):
+        window=min(2.,max(.001,now-self.started))
+        for queue in (self.tx,self.rx,self.changes):
+            while queue and queue[0]<=now-window:queue.popleft()
+        gaps=[b-a for a,b in zip(self.rx,list(self.rx)[1:])]
+        return {'window_seconds':window,'tx_hz':len(self.tx)/window,'rx_hz':len(self.rx)/window,
+                'change_hz':len(self.changes)/window,'sent':self.sent,'received':self.received,
+                'changed':self.changed,'waited':self.waited,'timeouts':self.timeouts,'no_wait':self.no_wait,
+                'timeout_percent':100*self.timeouts/self.waited if self.waited else None,
+                'mean_wait_ms':1000*self.wait_seconds/self.waited if self.waited else None,
+                'max_gap_ms':1000*max(gaps) if gaps else None,
+                'sample_age':now-self.last_received if self.last_received is not None else None,
+                'elapsed_seconds':max(0,now-self.started)}
+
 class Device:
     def __init__(self,folder):
         self.folder=Path(folder);self.folder.mkdir(parents=True,exist_ok=True)
@@ -30,7 +59,7 @@ class Device:
         self.client=None;self.task=None;self.stop=asyncio.Event();self.lock=asyncio.Lock();self.measure_lock=asyncio.Lock()
         self.waiter=None;self.active=None;self.measure_done=asyncio.Event();self.samples=asyncio.Event();self.touch_original=None;self.auto_original={}
         self.touch_on=False;self.other_notifications=set();self.control=Controller();self.peers=set();self.records=deque(maxlen=1000);self.evidence={};self.options={k:False for k in ('mouse','click','accel','touch','hr','spo2','battery','calibration','raw_gatt')}
-        self.options.update(health_interval=120,accel_interval=.15,manage_auto=True,gesture_debounce=.5,neutral_zone=8,
+        self.options.update(health_interval=120,accel_period=0.,accel_timeout=.35,accel_interval=.15,manage_auto=True,gesture_debounce=.5,neutral_zone=8,
                             **{'direction_range_'+name:20 for name in ('right','left','up','down')})
         self.preferences_path=self.folder/'preferences.json'
         self.preferences={}
@@ -53,9 +82,10 @@ class Device:
         self.pending=set();self.other_failed=set();self.last_gesture=0;self.channels={};self.next_health={};self.next_battery=0;self.last_poll=0
         self.gesture_sequence=0;self.gesture_counts={};self.gesture_history=deque(maxlen=8);self.measurement_sequence=0
         self.state['measurements']={}
+        self.poll_stats=SnapshotStats();self.poll_running=False
     @staticmethod
     def preference_limits():
-        return {'gesture_debounce':(0,2),'neutral_zone':(0,20),
+        return {'gesture_debounce':(0,2),'neutral_zone':(0,20),'accel_period':(0,2),'accel_timeout':(0,2),'accel_interval':(0,2),
                 **{'direction_range_'+name:(2,60) for name in ('right','left','up','down')}}
     @staticmethod
     def valid_number(value,low,high):
@@ -79,7 +109,13 @@ class Device:
         self.log('系統',message=message);self.emit({'type':'status','connected':connected,'message':message})
     def snapshot(self):
         self.state.update(paused=self.control.paused,access=Q.CGPreflightPostEventAccess(),calibrated=self.profile_path.exists(),active_measurement=self.active,channels=self.channels)
-        return {**self.state,'control':self.control_snapshot(),'gesture_history':list(reversed(self.gesture_history)),'evidence':self.evidence,'catalog':self.catalog,'read_queries':[{'key':k,'opcode':f'{v[0]:02X}','payload':v[1].hex(' ')} for k,v in SAFE_READS.items()],'logs':list(self.records),'log_file':self.log_path.name}
+        return {**self.state,'control':self.control_snapshot(),'polling':self.polling_snapshot(),'gesture_history':list(reversed(self.gesture_history)),'evidence':self.evidence,'catalog':self.catalog,'read_queries':[{'key':k,'opcode':f'{v[0]:02X}','payload':v[1].hex(' ')} for k,v in SAFE_READS.items()],'logs':list(self.records),'log_file':self.log_path.name}
+    def reset_poll_stats(self):self.poll_stats=SnapshotStats()
+    def polling_snapshot(self):
+        enabled=any(self.options[key] for key in ('accel','mouse','calibration'))
+        active=self.state['connected'] and enabled and self.active is None and self.poll_running
+        label='未連線' if not self.state['connected'] else ('量測中暫停' if self.active is not None else ('快照輪詢中' if active else '已停止'))
+        return {**self.poll_stats.snapshot(time.monotonic()),'active':active,'label':label}
     def control_snapshot(self):
         access=bool(Q.CGPreflightPostEventAccess())
         now=time.monotonic();age=now-self.control.last if self.control.last else None
@@ -118,6 +154,7 @@ class Device:
             channel=f[1];self.channels[str(channel)]=self.channels.get(str(channel),0)+1
             if channel==3:
                 raw=list(struct.unpack('>hhh',f[2:8]));self.state['values']['accel']={'raw':raw,'nominal_g':[round(x/8192,4) for x in raw],'time':datetime.now().astimezone().isoformat()}
+                self.poll_stats.record_sample(raw,time.monotonic())
                 self.control.update(raw,time.monotonic());self.samples.set();self.evidence['accel']='實機回報';self.emit({'type':'accel','raw':raw})
         if op==0x73:
             sub=f[1];self.state['last_notification']={'sub':sub,'payload':list(f[2:15])}
@@ -231,10 +268,10 @@ class Device:
         opts={**self.options,**changes}
         for key in ('mouse','click','accel','touch','hr','spo2','battery','calibration','raw_gatt','manage_auto'):
             if not isinstance(opts[key],bool):raise ValueError('選項必須是勾選值')
-        if not 60<=float(opts['health_interval'])<=3600 or not .1<=float(opts['accel_interval'])<=2:raise ValueError('讀取間隔超出範圍')
+        if not 60<=float(opts['health_interval'])<=3600:raise ValueError('讀取間隔超出範圍')
         for key,(low,high) in self.preference_limits().items():
             if not self.valid_number(opts[key],low,high):
-                raise ValueError('觸控防重複間隔必須是 0–2 秒' if key=='gesture_debounce' else
+                raise ValueError('快照輪詢時間必須是 0–2 秒' if key.startswith('accel_') else '觸控防重複間隔必須是 0–2 秒' if key=='gesture_debounce' else
                                  ('中立停止區必須是 0–20 度' if key=='neutral_zone' else '方向容許偏差必須是 2–60 度'))
         if opts['calibration']:opts['mouse']=False;opts['click']=False
         if opts['mouse']:
@@ -254,9 +291,11 @@ class Device:
         self.options.update(opts)
         self.apply_motion_settings()
         # A changed range takes effect on the latest valid sample, without recalibration.
-        if set(changes)&(set(self.preference_limits())-{'gesture_debounce'}):
+        if set(changes)&{'neutral_zone','direction_range_right','direction_range_left','direction_range_up','direction_range_down'}:
             value=self.state['values'].get('accel')
             if value and self.control.last:self.control.update(value['raw'],self.control.last)
+        if set(changes)&{'accel_period','accel_timeout','accel_interval'}:
+            self.reset_poll_stats()
         if previous['manage_auto']!=opts['manage_auto'] and self.state['connected']:await self.manage_auto(opts['manage_auto'])
         if self.active:
             key=MEASUREMENTS[self.active][0]
@@ -328,13 +367,29 @@ class Device:
                     await self.client.stop_notify(uuid);self.other_notifications.remove(uuid);self.log('取消訂閱',characteristic=uuid)
             if not self.options['raw_gatt']:self.other_failed.clear()
             if want and self.active is None:
-                self.samples.clear();await self.send(0xa1,b'\x03',reply=False)
-                try:await asyncio.wait_for(self.samples.wait(),.35)
-                except asyncio.TimeoutError:pass
-                had_accel=True;await asyncio.sleep(self.options['accel_interval'])
+                if not had_accel:self.reset_poll_stats()
+                self.poll_running=True
+                await self.poll_snapshot()
+                had_accel=True
             else:
+                self.poll_running=False
                 if had_accel:await self.send(0xa1,b'\x00',reply=False);had_accel=False
                 self.control.velocity=(0.,0.);await asyncio.sleep(.15)
+    async def poll_snapshot(self):
+        # One sequential write per cycle; skip missed beats instead of catching up in bursts.
+        period,timeout,pause=(self.options[k] for k in ('accel_period','accel_timeout','accel_interval'))
+        stats=self.poll_stats;started=time.monotonic()
+        self.samples.clear();await self.send(0xa1,b'\x03',reply=False)
+        stats.record_send(time.monotonic());wait_started=time.monotonic()
+        if timeout>0:
+            timed_out=False
+            try:await asyncio.wait_for(self.samples.wait(),timeout)
+            except asyncio.TimeoutError:timed_out=True
+            stats.record_wait(time.monotonic()-wait_started,timed_out)
+        else:stats.no_wait+=1
+        # Period is a minimum start-to-start interval. Pause is after the sample wait.
+        delay=max(pause,period-(time.monotonic()-started),0.)
+        await asyncio.sleep(delay)  # sleep(0) yields even for the unrestricted preset.
     async def movement(self):
         last=time.monotonic();last_log=0
         while not self.stop.is_set():

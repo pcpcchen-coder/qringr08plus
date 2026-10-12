@@ -27,6 +27,7 @@ async def create_app(folder,port):
     async def connect(req):await engine.connect();return web.json_response({'ok':True})
     async def disconnect(req):await engine.disconnect();return web.json_response({'ok':True,'message':engine.state['message']})
     async def options(req):await engine.set_options(await req.json());return web.json_response({'ok':True})
+    async def reset_polling(req):engine.reset_poll_stats();return web.json_response({'ok':True})
     async def read(req):
         data=await req.json();return web.json_response(await engine.read_feature(data['feature']))
     async def pause(req):
@@ -67,7 +68,7 @@ async def create_app(folder,port):
         await engine.disconnect();app['shutdown'].set();return web.json_response({'ok':True})
     app['shutdown']=asyncio.Event()
     for path,handler in [('/api/state',state),('/api/control-status',control_status),('/api/profile',profile),('/api/export',export),('/ws',ws)]:app.router.add_get(path,handler)
-    for path,handler in [('/api/connect',connect),('/api/disconnect',disconnect),('/api/options',options),('/api/read',read),('/api/pause',pause),('/api/resume',resume),('/api/measure',measure),('/api/save',save),('/api/request-access',request_access),('/api/shutdown',shutdown)]:app.router.add_post(path,handler)
+    for path,handler in [('/api/connect',connect),('/api/disconnect',disconnect),('/api/options',options),('/api/polling/reset',reset_polling),('/api/read',read),('/api/pause',pause),('/api/resume',resume),('/api/measure',measure),('/api/save',save),('/api/request-access',request_access),('/api/shutdown',shutdown)]:app.router.add_post(path,handler)
     root=Path(__file__).parent/'web'
     asset_version=hashlib.sha256((root/'studio.js').read_bytes()+(root/'studio.css').read_bytes()).hexdigest()[:12]
     page=(root/'index.html').read_text().replace('href="studio.css"',f'href="studio.css?v={asset_version}"').replace('src="studio.js"',f'src="studio.js?v={asset_version}"')
