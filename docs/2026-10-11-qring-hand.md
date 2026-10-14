@@ -69,3 +69,13 @@ Studio 已新增可調發送節拍、取樣等待上限與輪後休息，並呈�
 - 新映射只在模擬戒指與 HTTP 模擬面板上測試，未指揮實體手掌動作。最後的藍牙授權刷新／重啟確認一度因 Mac 鎖定暫停；20:57（Asia/Taipei）已刷新授權並重啟，連上戒指與實體手掌面板，收到新三軸取樣（最近取樣年齡 0.08 秒）。當下姿態超出原校正範圍，啟動跟隨被拒絕、扭力關閉；需操作者擺回校正方向後再啟動。實際新映射的方向、複合路徑與手感仍待測。
 
 [直接跟隨的獨立說明](https://github.com/pcpcchen-coder/this-is-yourX/blob/codex/qring-hand-sway/right_hand/control_methods/qring_fist/direct-follow.md)記錄映射、限位、遷移、測試指令與結果。[PR #9](https://github.com/pcpcchen-coder/this-is-yourX/pull/9) 已更新為 0.3.0，commit `95f223c775952cc7ebc1c67c9f6cdb834178bcbd`；仍接續 PR #8，尚未合併。QRing Studio 本身仍為 0.4.0。
+
+## 2026-10-14：QRing Hand 0.3.1 側擺校正修正
+
+操作者回報左右側擺重複失敗，訊息為「請保持手指張開／側擺角度需在 10–65°」。查明舊程式還限制沿握拳方向的伴隨偏移不得超過 15°，但把這項與側擺過大合併報錯，且延至右側取樣才一起驗證。舊失敗沒有記錄角度，不能回溯證明每次都是哪一項觸發。
+
+0.3.1 改用左右各自的取樣補償伴隨偏移，每側立即驗證；校正頁顯示側擺角度、伴隨偏移與兩方向分離度，保留失敗原因並記入本機事件。新校正存 version 3，舊 version 2 原映射與檔案保留，需重新校正才使用補償。側擺 10–65°、兩方向可辨識性與機器手限位仍受檢查。
+
+77 項模擬測試通過，已在瀏覽器確認左側傾 25°伴隨 +30°偏移、右側傾 35°伴隨 −22°偏移皆可記錄；側傾 70°會在當下顯示明確拒絕原因。0.3.1（build 6）已在 M6 安裝並連回真實戒指，個人校正與設定雜湊保持一致，機器手扭力關閉。實體補償效果與校正成功仍待操作者試用，沒有 real-hardware validation 主張。
+
+[獨立調查、補償公式與遷移](https://github.com/pcpcchen-coder/this-is-yourX/blob/codex/qring-hand-sway/right_hand/control_methods/qring_fist/calibration-fix.md)已推上 [PR #9](https://github.com/pcpcchen-coder/this-is-yourX/pull/9)，commit `0e939b3d499d55ef897962d92742aeaaf1c59c91`。QRing Studio 本身仍為 0.4.0。
